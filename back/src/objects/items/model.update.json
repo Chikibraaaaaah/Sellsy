@@ -1,0 +1,115 @@
+{
+  "object": "items",
+  "operation": "updateItem",
+  "sourceSchema": "UpdateItem",
+  "fields": [
+    {
+      "field": "name",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 250,
+      "example": "lorem ipsum",
+      "description": "Item name"
+    },
+    {
+      "field": "reference",
+      "required": false,
+      "type": "string",
+      "example": "ref0123",
+      "description": "Item reference"
+    },
+    {
+      "field": "reference_price",
+      "required": false,
+      "type": "string",
+      "example": "19.99",
+      "description": "Item reference price"
+    },
+    {
+      "field": "purchase_amount",
+      "required": false,
+      "type": "string",
+      "example": "8.25",
+      "description": "Item's purchase price excluding taxes"
+    },
+    {
+      "field": "is_reference_price_taxes_free",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Price expressed without tax"
+    },
+    {
+      "field": "tax_id",
+      "required": false,
+      "type": "integer",
+      "example": 354,
+      "description": "Tax id"
+    },
+    {
+      "field": "unit_id",
+      "required": false,
+      "type": "integer",
+      "example": 952,
+      "description": "Unit id"
+    },
+    {
+      "field": "category_id",
+      "required": false,
+      "type": "integer",
+      "example": 123,
+      "description": "Category id (only for product and service types)"
+    },
+    {
+      "field": "standard_quantity",
+      "required": false,
+      "type": "string",
+      "example": 3,
+      "description": "Standard quantity"
+    },
+    {
+      "field": "description",
+      "required": false,
+      "type": "string",
+      "example": "T-shirt 90% coton",
+      "description": "Description of item"
+    },
+    {
+      "field": "is_name_included_in_description",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "To add the name of item in description"
+    },
+    {
+      "field": "accounting_code_id",
+      "required": false,
+      "type": "integer",
+      "example": 321,
+      "description": "Accounting code id"
+    },
+    {
+      "field": "accounting_purchase_code_id",
+      "required": false,
+      "type": "integer",
+      "example": 123,
+      "description": "Accounting purchase code id"
+    },
+    {
+      "field": "accounting_analytic_code",
+      "required": false,
+      "type": "string",
+      "maxLength": 13,
+      "example": "divers",
+      "description": "Accounting analytic code"
+    },
+    {
+      "field": "is_archived",
+      "required": false,
+      "type": "boolean",
+      "example": false,
+      "description": "Is item archived"
+    }
+  ]
+}

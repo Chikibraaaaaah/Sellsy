@@ -1,0 +1,58 @@
+{
+  "object": "custom-activities",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "postCustomActivities",
+    "list": "getCustomActivities",
+    "search": "postCustomActivitiesSearch",
+    "get": "getCustomActivitiesId",
+    "update": "putCustomActivitiesId",
+    "delete": "deleteCustomActivitiesId"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "DELETE",
+      "path": "/custom-activities/{id}",
+      "operation": "deleteCustomActivitiesId",
+      "summary": "Delete Custom Activity",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/custom-activities/{id}",
+      "operation": "getCustomActivitiesId",
+      "summary": "Get Custom Activity",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/custom-activities/{id}",
+      "operation": "putCustomActivitiesId",
+      "summary": "Update Custom Activity",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/custom-activities",
+      "operation": "getCustomActivities",
+      "summary": "Customs Activities List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/custom-activities",
+      "operation": "postCustomActivities",
+      "summary": "Create Custom Activity",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/custom-activities/search",
+      "operation": "postCustomActivitiesSearch",
+      "summary": "Search Custom Activities",
+      "contentType": "application/json"
+    }
+  ]
+}

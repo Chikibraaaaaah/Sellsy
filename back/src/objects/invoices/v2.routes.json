@@ -1,0 +1,190 @@
+{
+  "object": "invoices",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createInvoice",
+    "list": "getInvoices",
+    "search": "searchInvoices",
+    "get": "getInvoice",
+    "update": "updateInvoice"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/invoices/{id}",
+      "operation": "getInvoice",
+      "summary": "Get invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/invoices/{id}",
+      "operation": "updateInvoice",
+      "summary": "Update invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/invoices",
+      "operation": "getInvoices",
+      "summary": "Invoices List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/invoices",
+      "operation": "createInvoice",
+      "summary": "Create invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/invoices/search",
+      "operation": "searchInvoices",
+      "summary": "Search invoices",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/invoices/export",
+      "operation": "exportInvoices",
+      "summary": "Export invoices",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/invoices/favourite-filters",
+      "operation": "getInvoiceFavouriteFilters",
+      "summary": "List invoices favourite filters",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/invoices/compute",
+      "operation": "computeInvoice",
+      "summary": "Compute an invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/invoices/{id}/smart-tags",
+      "operation": "getInvoiceSmartTags",
+      "summary": "Invoice smart-tags list",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/invoices/{id}/smart-tags",
+      "operation": "linkInvoiceSmartTags",
+      "summary": "Link smart tags to invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/invoices/{id}/validate",
+      "operation": "validateInvoice",
+      "summary": "Validate Invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/invoices/{id}/credit-notes",
+      "operation": "getInvoiceCreditNotes",
+      "summary": "Get credit notes linked to invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/invoices/{invoiceId}/credit-notes/{creditNoteId}",
+      "operation": "unlinkInvoicesCreditNote",
+      "summary": "Unlink a credit note from an invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/invoices/{invoiceId}/credit-notes/{creditNoteId}",
+      "operation": "linkCreditNoteToInvoice",
+      "summary": "Link a credit note to an invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/invoices/{id}/payments",
+      "operation": "getInvoicePayments",
+      "summary": "Invoice payments list",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/invoices/{documentId}/payments/{paymentId}",
+      "operation": "unlinkInvoicePayment",
+      "summary": "Unlink payment from invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/invoices/{documentId}/payments/{paymentId}",
+      "operation": "linkInvoicePayment",
+      "summary": "Link payment to invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/invoices/{documentId}/files",
+      "operation": "getInvoiceFiles",
+      "summary": "List directories and files of an invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/invoices/{documentId}/files",
+      "operation": "uploadInvoiceFile",
+      "summary": "Attach file to an invoice",
+      "contentType": "multipart/form-data"
+    },
+    {
+      "method": "GET",
+      "path": "/invoices/{id}/custom-fields",
+      "operation": "getInvoiceCustomFields",
+      "summary": "Invoice custom fields List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/invoices/{id}/custom-fields",
+      "operation": "updateInvoiceCustomFields",
+      "summary": "Update Invoice custom fields",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/invoices/{invoiceId}/primes/{primeId}",
+      "operation": "unlinkInvoicePrime",
+      "summary": "Unlink a prime from an invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/invoices/{invoiceId}/primes/{primeId}",
+      "operation": "linkInvoicePrime",
+      "summary": "Link prime to invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/invoices/{invoiceId}/discount-incl-taxes/{discountId}",
+      "operation": "unlinkInvoiceDiscountInclTaxes",
+      "summary": "Unlink a discount including taxes from an invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/invoices/{invoiceId}/discount-incl-taxes/{discountId}",
+      "operation": "linkInvoiceDiscountInclTaxes",
+      "summary": "Link discount including taxes to invoice",
+      "contentType": "application/json"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "object": "staffs",
+  "operation": "createStaff",
+  "sourceSchema": "StaffCreateItem",
+  "fields": [
+    {
+      "field": "lastname",
+      "required": true,
+      "type": "string",
+      "nullable": false,
+      "maxLength": 200,
+      "example": "Smith",
+      "description": "Staff last name"
+    },
+    {
+      "field": "firstname",
+      "required": true,
+      "type": "string",
+      "nullable": false,
+      "maxLength": 200,
+      "example": "John",
+      "description": "Staff first name"
+    },
+    {
+      "field": "email",
+      "required": true,
+      "type": "string",
+      "format": "email",
+      "example": "john@example-company.com",
+      "description": "Staff email address"
+    },
+    {
+      "field": "phone_number",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "+33100000000",
+      "description": "Staff phone number"
+    },
+    {
+      "field": "mobile_number",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "+33600000000",
+      "description": "Staff mobile number"
+    },
+    {
+      "field": "fax_number",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "+33500000000",
+      "description": "Staff fax number"
+    },
+    {
+      "field": "civility",
+      "required": true,
+      "type": "string",
+      "enum": [
+        "mr",
+        "mrs",
+        "ms"
+      ],
+      "nullable": true,
+      "example": "mrs",
+      "description": "Civility of staff"
+    },
+    {
+      "field": "position",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 200,
+      "example": "Sales manager",
+      "description": "Staff position"
+    },
+    {
+      "field": "profile",
+      "required": true,
+      "type": "integer",
+      "example": 3443,
+      "description": "Staff privilège profile"
+    },
+    {
+      "field": "team",
+      "required": true,
+      "type": "integer",
+      "nullable": true,
+      "example": -1,
+      "description": "Staff team position"
+    },
+    {
+      "field": "job",
+      "required": true,
+      "type": "integer",
+      "nullable": true,
+      "example": -1,
+      "description": "Staff job"
+    },
+    {
+      "field": "timezone",
+      "required": true,
+      "type": "string",
+      "example": "Europe/Paris",
+      "description": "Staff time zone"
+    },
+    {
+      "field": "language",
+      "required": true,
+      "type": "string",
+      "example": "fr",
+      "description": "Staff language"
+    },
+    {
+      "field": "first_connection_onboarding",
+      "required": true,
+      "type": "boolean",
+      "example": true,
+      "description": "Staff onboarding on first connection"
+    },
+    {
+      "field": "licenses[]",
+      "type": "array",
+      "required": false,
+      "description": ""
+    },
+    {
+      "field": "licenses[].id",
+      "required": false,
+      "type": "string",
+      "example": "9998a80a-7b75-4616-96d5-7ccff7ac08e8",
+      "description": "License identifier"
+    }
+  ]
+}

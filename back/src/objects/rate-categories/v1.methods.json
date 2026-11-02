@@ -1,0 +1,27 @@
+{
+  "object": "rate-categories",
+  "apiVersion": "v1",
+  "endpoint": "https://apifeed.sellsy.com/0/",
+  "v1Only": false,
+  "note": "",
+  "source": "https://docs.sellsy.com/api/v1/documentation/methods",
+  "methods": [
+    "Accountdatas.getTaxes",
+    "Accountdatas.getTaxe",
+    "Accountdatas.deleteTaxe",
+    "Accountdatas.getUnits",
+    "Accountdatas.getUnit",
+    "Accountdatas.createUnit",
+    "Accountdatas.createUnits",
+    "Accountdatas.updateUnit",
+    "Accountdatas.updateUnits",
+    "Accountdatas.deleteUnit",
+    "Accountdatas.getPayMediums",
+    "Accountdatas.getPayMedium",
+    "Accountdatas.createPayMedium",
+    "Accountdatas.updatePayMedium",
+    "Accountdatas.deletePayMedium",
+    "Accountdatas.getRateCategories",
+    "Accountdatas.getRateCategory"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "object": "rate-categories",
+  "operation": "createRateCategory",
+  "sourceSchema": "inline",
+  "fields": []
+}

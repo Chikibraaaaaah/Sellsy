@@ -1,0 +1,21 @@
+{
+  "object": "support",
+  "apiVersion": "v1",
+  "endpoint": "https://apifeed.sellsy.com/0/",
+  "v1Only": true,
+  "note": "Tickets support : v1 uniquement.",
+  "source": "https://docs.sellsy.com/api/v1/documentation/methods",
+  "methods": [
+    "Support.getList",
+    "Support.getOne",
+    "Support.getConversation",
+    "Support.deleteConversation",
+    "Support.create",
+    "Support.reply",
+    "Support.updateReply",
+    "Support.updateAssignation",
+    "Support.updateStep",
+    "Support.updateThird",
+    "Support.getTemplates"
+  ]
+}

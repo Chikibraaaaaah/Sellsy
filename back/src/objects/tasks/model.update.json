@@ -1,0 +1,144 @@
+{
+  "object": "tasks",
+  "operation": "updateTask",
+  "sourceSchema": "TaskUpdateItem",
+  "fields": [
+    {
+      "field": "title",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "Meeting",
+      "description": "Task title"
+    },
+    {
+      "field": "description",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "Monthly meeting with consulting team",
+      "description": "Task description"
+    },
+    {
+      "field": "is_private",
+      "required": false,
+      "type": "boolean",
+      "default": false,
+      "description": "Task is private or public"
+    },
+    {
+      "field": "due_date",
+      "required": false,
+      "type": "string",
+      "format": "date-time",
+      "example": "2020-01-01T00:00:00+01:00",
+      "description": "due date and time of task"
+    },
+    {
+      "field": "status",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "todo",
+        "done"
+      ],
+      "example": "todo",
+      "description": "Task status"
+    },
+    {
+      "field": "assigned_staff_ids",
+      "type": "array",
+      "items": "integer",
+      "required": false,
+      "description": ""
+    },
+    {
+      "field": "label_id",
+      "required": false,
+      "type": "integer",
+      "description": "Task label"
+    },
+    {
+      "field": "reminders[]",
+      "type": "array",
+      "required": false,
+      "description": "Task reminders.<br> Any reminder passed here will _replace_ the existing reminders.<br> If empty, all existing reminders will be removed.<br> If unset, existing reminders will be kept as-is."
+    },
+    {
+      "field": "reminders[].medium",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "email",
+        "inapp"
+      ],
+      "description": "Medium through which the reminder will be sent"
+    },
+    {
+      "field": "reminders[].delay",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "instant",
+        "5min",
+        "15min",
+        "30min",
+        "1hour",
+        "1day",
+        "1week",
+        "1month"
+      ],
+      "description": "Delay before sending the reminder, relative to the task time"
+    },
+    {
+      "field": "related[]",
+      "type": "array",
+      "required": false,
+      "description": "Main object related to the task (limit to 1). If empty, the link with the existing related object will be removed."
+    },
+    {
+      "field": "related[].id",
+      "required": false,
+      "type": "integer",
+      "example": 1
+    },
+    {
+      "field": "related[].type",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "opportunity",
+        "company",
+        "individual",
+        "contact",
+        "estimate",
+        "invoice",
+        "creditnote",
+        "order",
+        "delivery",
+        "model",
+        "purchase-invoice",
+        "purchase-creditnote",
+        "purchase-order",
+        "purchase-delivery",
+        "item"
+      ],
+      "example": "opportunity"
+    },
+    {
+      "field": "owner_id",
+      "required": false,
+      "type": "integer",
+      "minimum": 1,
+      "description": "Owner of the task (Staff id expected)"
+    },
+    {
+      "field": "priority",
+      "required": false,
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Priority level of the task"
+    }
+  ]
+}

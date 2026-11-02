@@ -1,0 +1,145 @@
+{
+  "object": "staffs",
+  "operation": "updateStaff",
+  "sourceSchema": "StaffUpdateItem",
+  "fields": [
+    {
+      "field": "lastname",
+      "required": false,
+      "type": "string",
+      "nullable": false,
+      "maxLength": 200,
+      "example": "Smith",
+      "description": "Staff last name"
+    },
+    {
+      "field": "firstname",
+      "required": false,
+      "type": "string",
+      "nullable": false,
+      "maxLength": 200,
+      "example": "John",
+      "description": "Staff first name"
+    },
+    {
+      "field": "email",
+      "required": false,
+      "type": "string",
+      "format": "email",
+      "example": "john@example-company.com",
+      "description": "Staff email address. <br>If 2FA is enabled on the account, the `totp_code` field is required to update this field."
+    },
+    {
+      "field": "phone_number",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "+33100000000",
+      "description": "Staff phone number"
+    },
+    {
+      "field": "mobile_number",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "+33600000000",
+      "description": "Staff mobile number"
+    },
+    {
+      "field": "fax_number",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "+33500000000",
+      "description": "Staff fax number"
+    },
+    {
+      "field": "civility",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "mr",
+        "mrs",
+        "ms"
+      ],
+      "nullable": true,
+      "example": "mrs",
+      "description": "Civility of staff"
+    },
+    {
+      "field": "position",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 200,
+      "example": "Sales manager",
+      "description": "Staff position"
+    },
+    {
+      "field": "profile",
+      "required": false,
+      "type": "integer",
+      "example": 3443,
+      "description": "Staff privilège profile"
+    },
+    {
+      "field": "team",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "example": -1,
+      "description": "Staff team position"
+    },
+    {
+      "field": "job",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "example": -1,
+      "description": "Staff job"
+    },
+    {
+      "field": "timezone",
+      "required": false,
+      "type": "string",
+      "example": "Europe/Paris",
+      "description": "Staff time zone"
+    },
+    {
+      "field": "language",
+      "required": false,
+      "type": "string",
+      "example": "fr",
+      "description": "Staff language"
+    },
+    {
+      "field": "licenses[]",
+      "type": "array",
+      "required": false,
+      "description": ""
+    },
+    {
+      "field": "licenses[].id",
+      "required": false,
+      "type": "string",
+      "example": "9998a80a-7b75-4616-96d5-7ccff7ac08e8",
+      "description": "License identifier"
+    },
+    {
+      "field": "is_active",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Status of the staff access <br>If your account contains licenses, those already attached to this collaborator will remain so, you will have to specify the \"licenses\" property to free the licenses\n"
+    },
+    {
+      "field": "totp_code",
+      "required": false,
+      "type": "string",
+      "maxLength": 6,
+      "minLength": 6,
+      "example": "123456",
+      "description": "6-digit TOTP code for verification. <br>Required when updating the email address if 2FA is enabled on the account."
+    }
+  ]
+}

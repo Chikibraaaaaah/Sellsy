@@ -1,0 +1,50 @@
+{
+  "object": "discount-incl-taxes",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createDiscountInclTaxes",
+    "list": "getDiscountsInclTaxes",
+    "get": "getDiscountInclTaxes",
+    "update": "updateDiscountInclTaxes",
+    "delete": "deleteDiscountInclTaxes"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/discount-incl-taxes",
+      "operation": "getDiscountsInclTaxes",
+      "summary": "Get list of discounts including taxes",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/discount-incl-taxes",
+      "operation": "createDiscountInclTaxes",
+      "summary": "Create a discount including taxes",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/discount-incl-taxes/{id}",
+      "operation": "deleteDiscountInclTaxes",
+      "summary": "Delete a discount including taxes",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/discount-incl-taxes/{id}",
+      "operation": "getDiscountInclTaxes",
+      "summary": "Get a discount including taxes",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/discount-incl-taxes/{id}",
+      "operation": "updateDiscountInclTaxes",
+      "summary": "Update a discount including taxes",
+      "contentType": "application/json"
+    }
+  ]
+}

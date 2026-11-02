@@ -1,0 +1,42 @@
+{
+  "object": "accounting-codes",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createAccountingCode",
+    "list": "getAccountingCodes",
+    "search": "searchAccountingCodes",
+    "delete": "deleteAccountingCode"
+  },
+  "updateMethod": null,
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/accounting-codes",
+      "operation": "getAccountingCodes",
+      "summary": "Get accounting codes",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/accounting-codes",
+      "operation": "createAccountingCode",
+      "summary": "Create an accounting code",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounting-codes/{id}",
+      "operation": "deleteAccountingCode",
+      "summary": "Delete an accounting code",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/accounting-codes/search",
+      "operation": "searchAccountingCodes",
+      "summary": "Search accounting codes",
+      "contentType": "application/json"
+    }
+  ]
+}

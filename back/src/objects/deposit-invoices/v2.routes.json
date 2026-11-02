@@ -1,0 +1,148 @@
+{
+  "object": "deposit-invoices",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createDepositInvoice",
+    "list": "getDepositInvoices",
+    "search": "searchDepositInvoices",
+    "get": "getDepositInvoice",
+    "update": "updateDepositInvoice"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/deposit-invoices",
+      "operation": "getDepositInvoices",
+      "summary": "List deposit invoices",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/deposit-invoices",
+      "operation": "createDepositInvoice",
+      "summary": "Create a deposit invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/deposit-invoices/search",
+      "operation": "searchDepositInvoices",
+      "summary": "Search deposit invoices",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/deposit-invoices/prepare",
+      "operation": "prepareDepositInvoice",
+      "summary": "Prepare a deposit invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/deposit-invoices/quick-create",
+      "operation": "quickCreateDepositInvoice",
+      "summary": "Create a deposit invoice quickly",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/deposit-invoices/compute",
+      "operation": "computeDepositInvoice",
+      "summary": "Compute a deposit invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/deposit-invoices/{id}",
+      "operation": "getDepositInvoice",
+      "summary": "Get a deposit invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/deposit-invoices/{id}",
+      "operation": "updateDepositInvoice",
+      "summary": "Update a deposit invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/deposit-invoices/{id}/smart-tags",
+      "operation": "getDepositInvoiceSmartTags",
+      "summary": "Get smart tags for a deposit invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/deposit-invoices/{id}/smart-tags",
+      "operation": "linkDepositInvoiceSmartTags",
+      "summary": "Link smart tags to deposit invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/deposit-invoices/{id}/validate",
+      "operation": "validateDepositInvoice",
+      "summary": "Validate Deposit Invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/deposit-invoices/{id}/credit-notes",
+      "operation": "getDepositInvoiceCreditNotes",
+      "summary": "Get credit notes linked to a deposit invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/deposit-invoices/{id}/payments",
+      "operation": "getDepositInvoicePayments",
+      "summary": "Deposit payments list",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/deposit-invoices/{documentId}/payments/{paymentId}",
+      "operation": "unlinkDepositInvoicePayment",
+      "summary": "Unlink payment from deposit invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/deposit-invoices/{documentId}/payments/{paymentId}",
+      "operation": "linkDepositInvoicePayment",
+      "summary": "Link payment to deposit invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/deposit-invoices/{documentId}/files",
+      "operation": "getDepositInvoiceFiles",
+      "summary": "List directories and files of a deposit invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/deposit-invoices/{documentId}/files",
+      "operation": "uploadDepositInvoiceFile",
+      "summary": "Attach file to a deposit invoice",
+      "contentType": "multipart/form-data"
+    },
+    {
+      "method": "GET",
+      "path": "/deposit-invoices/{id}/custom-fields",
+      "operation": "getDepositInvoiceCustomFields",
+      "summary": "Get deposit invoice custom fields",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/deposit-invoices/{id}/custom-fields",
+      "operation": "updateDepositInvoiceCustomFields",
+      "summary": "Update Deposit Invoice custom fields",
+      "contentType": "application/json"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "object": "addresses",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "list": "getAddresses"
+  },
+  "updateMethod": null,
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/addresses",
+      "operation": "getAddresses",
+      "summary": "List account addresses",
+      "contentType": "application/json"
+    }
+  ]
+}

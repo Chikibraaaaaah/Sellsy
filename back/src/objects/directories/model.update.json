@@ -1,0 +1,23 @@
+{
+  "object": "directories",
+  "operation": "updateDirectory",
+  "sourceSchema": "UpdateDirectory",
+  "fields": [
+    {
+      "field": "name",
+      "required": false,
+      "type": "string",
+      "maxLength": 30,
+      "minLength": 1,
+      "description": "Name of the directory"
+    },
+    {
+      "field": "description",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 160,
+      "description": "An optional description for the directory"
+    }
+  ]
+}

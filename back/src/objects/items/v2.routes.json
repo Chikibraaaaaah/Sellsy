@@ -1,0 +1,107 @@
+{
+  "object": "items",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createItem",
+    "list": "getItems",
+    "search": "searchItems",
+    "get": "getItem",
+    "update": "updateItem",
+    "delete": "deleteItem"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/items",
+      "operation": "getItems",
+      "summary": "Items List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/items",
+      "operation": "createItem",
+      "summary": "Create an item",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/items/search",
+      "operation": "searchItems",
+      "summary": "Search items",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/items/favourite-filters",
+      "operation": "getItemFavouriteFilters",
+      "summary": "List items favourite filters",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/items/{id}",
+      "operation": "deleteItem",
+      "summary": "Delete item",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/items/{id}",
+      "operation": "getItem",
+      "summary": "Get an item",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/items/{id}",
+      "operation": "updateItem",
+      "summary": "Update an item",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/items/{id}/prices",
+      "operation": "getItemPrices",
+      "summary": "Get item prices",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/items/{id}/prices",
+      "operation": "putItemPrices",
+      "summary": "Update item prices",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/items/{id}/declinations",
+      "operation": "getItemDeclinations",
+      "summary": "Declinations List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/items/{id}/declinations",
+      "operation": "searchItemDeclinations",
+      "summary": "Search Declinations",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/items/{id}/declinations/{declinationId}/prices",
+      "operation": "getItemDeclinationPrices",
+      "summary": "Get item declination prices",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/items/barcodes/search",
+      "operation": "searchBarcodes",
+      "summary": "Search barcodes",
+      "contentType": "application/json"
+    }
+  ]
+}

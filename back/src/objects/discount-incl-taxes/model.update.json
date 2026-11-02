@@ -1,0 +1,57 @@
+{
+  "object": "discount-incl-taxes",
+  "operation": "updateDiscountInclTaxes",
+  "sourceSchema": "UpdateDiscountInclTaxes",
+  "fields": [
+    {
+      "field": "reference",
+      "required": false,
+      "type": "string",
+      "maxLength": 250,
+      "minLength": 1,
+      "example": "Halloween five last day",
+      "description": "Reference of discount"
+    },
+    {
+      "field": "name",
+      "required": false,
+      "type": "string",
+      "maxLength": 250,
+      "minLength": 1,
+      "example": "Halloween promotion",
+      "description": "Name of discount"
+    },
+    {
+      "field": "description",
+      "required": false,
+      "type": "string",
+      "maxLength": 1000.0,
+      "minLength": 1,
+      "example": "For purchases made during the last five days of October",
+      "description": "Description visible on the document"
+    },
+    {
+      "field": "unit_id",
+      "required": false,
+      "type": "integer",
+      "example": 31,
+      "description": "Unit id"
+    },
+    {
+      "field": "amount",
+      "required": false,
+      "type": "string",
+      "minLength": 0,
+      "example": 31,
+      "description": "Amount of unit"
+    },
+    {
+      "field": "accounting_code_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "example": 31,
+      "description": "<ul>If `null` : <li>Uses company default</li> <li>Or the customer's if he has one</li></ul>\n"
+    }
+  ]
+}

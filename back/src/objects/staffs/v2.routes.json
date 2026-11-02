@@ -1,0 +1,64 @@
+{
+  "object": "staffs",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createStaff",
+    "list": "getStaffs",
+    "search": "searchStaffs",
+    "get": "getStaff",
+    "update": "updateStaff"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/staffs/{id}",
+      "operation": "getStaff",
+      "summary": "Get Staff",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/staffs/{id}",
+      "operation": "updateStaff",
+      "summary": "Update Staff",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/staffs",
+      "operation": "getStaffs",
+      "summary": "Get Staffs",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/staffs",
+      "operation": "createStaff",
+      "summary": "Create a staff",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/staffs/search",
+      "operation": "searchStaffs",
+      "summary": "Search Staffs",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/staffs/{id}/licenses",
+      "operation": "deleteStaffLicenses",
+      "summary": "Delete licenses",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/staffs/{id}/licenses",
+      "operation": "putStaffLicenses",
+      "summary": "Put staff licenses",
+      "contentType": "application/json"
+    }
+  ]
+}

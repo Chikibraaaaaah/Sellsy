@@ -1,0 +1,65 @@
+{
+  "object": "tasks",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createTask",
+    "list": "getTasks",
+    "search": "searchTasks",
+    "get": "getTask",
+    "update": "updateTask",
+    "delete": "deleteTask"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "DELETE",
+      "path": "/tasks/{id}",
+      "operation": "deleteTask",
+      "summary": "Delete a task",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/tasks/{id}",
+      "operation": "getTask",
+      "summary": "Get a task",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/tasks/{id}",
+      "operation": "updateTask",
+      "summary": "Update a task",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/tasks",
+      "operation": "getTasks",
+      "summary": "Tasks List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/tasks",
+      "operation": "createTask",
+      "summary": "Create a task",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/tasks/search",
+      "operation": "searchTasks",
+      "summary": "Search Tasks",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/tasks/labels",
+      "operation": "getTasksLabels",
+      "summary": "Get tasks labels",
+      "contentType": "application/json"
+    }
+  ]
+}

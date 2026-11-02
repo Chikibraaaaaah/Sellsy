@@ -1,0 +1,34 @@
+{
+  "object": "custom-fields",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "list": "getCustomFields",
+    "search": "searchCustomFields",
+    "get": "getCustomField"
+  },
+  "updateMethod": null,
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/custom-fields",
+      "operation": "getCustomFields",
+      "summary": "Custom Fields List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/custom-fields/{id}",
+      "operation": "getCustomField",
+      "summary": "Get custom field",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/custom-fields/search",
+      "operation": "searchCustomFields",
+      "summary": "Custom Fields Search",
+      "contentType": "application/json"
+    }
+  ]
+}

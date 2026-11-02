@@ -1,0 +1,198 @@
+{
+  "object": "opportunities",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createOpportunity",
+    "list": "getOpportunities",
+    "search": "searchOpportunities",
+    "get": "getOpportunity",
+    "update": "updateOpportunity",
+    "delete": "deleteOpportunity"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "DELETE",
+      "path": "/opportunities/{id}",
+      "operation": "deleteOpportunity",
+      "summary": "Delete an Opportunity",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/opportunities/{id}",
+      "operation": "getOpportunity",
+      "summary": "Get Opportunity",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PATCH",
+      "path": "/opportunities/{id}",
+      "operation": "patchOpportunity",
+      "summary": "Partially update opportunity",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/opportunities/{id}",
+      "operation": "updateOpportunity",
+      "summary": "Update Opportunity",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PATCH",
+      "path": "/opportunities/{id}/step-rank",
+      "operation": "updateOpportunityRank",
+      "summary": "Update opportunity's rank and/or step",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/opportunities",
+      "operation": "getOpportunities",
+      "summary": "Get Opportunities",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/opportunities",
+      "operation": "createOpportunity",
+      "summary": "Create an opportunity",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/opportunities/{opportunityId}/files",
+      "operation": "getOpportunityFiles",
+      "summary": "List directories and files of an opportunity",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/opportunities/{opportunityId}/files",
+      "operation": "uploadOpportunityFile",
+      "summary": "Attach file to an opportunity",
+      "contentType": "multipart/form-data"
+    },
+    {
+      "method": "POST",
+      "path": "/opportunities/search",
+      "operation": "searchOpportunities",
+      "summary": "Search Opportunities",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/opportunities/export",
+      "operation": "exportOpportunities",
+      "summary": "Export opportunities",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/opportunities/favourite-filters",
+      "operation": "getOpportunityFavouriteFilters",
+      "summary": "List opportunities favourite filters",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/opportunities/sources",
+      "operation": "getOpportunitySources",
+      "summary": "Get Opportunity Sources",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/opportunities/sources/search",
+      "operation": "searchOpportunitySources",
+      "summary": "Search Opportunity Sources",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/opportunities/categories/{sourceCategoryId}/sources",
+      "operation": "getOpportunityCategorySources",
+      "summary": "Get Opportunity Category Sources",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/opportunities/pipelines",
+      "operation": "getOpportunityPipelines",
+      "summary": "Get Opportunity Pipelines",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/opportunities/pipelines/search",
+      "operation": "searchOpportunityPipelines",
+      "summary": "Search Opportunity Pipelines",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/opportunities/pipelines/{pipelineId}/steps",
+      "operation": "getOpportunityPipelineSteps",
+      "summary": "Get Opportunity Pipeline Steps",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/opportunities/pipelines/{pipelineId}/steps/search",
+      "operation": "searchOpportunityPipelineSteps",
+      "summary": "Search Opportunity Pipeline Steps",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/opportunities/steps/search",
+      "operation": "searchAllOpportunityPipelineSteps",
+      "summary": "Search All Opportunity Pipeline Steps",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/opportunities/categories",
+      "operation": "getOpportunitiesCategories",
+      "summary": "Get Opportunities Categories List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/opportunities/categories/{id}",
+      "operation": "getOpportunitiesCategory",
+      "summary": "Get Opportunities Category",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/opportunities/{id}/custom-fields",
+      "operation": "getOpportunityCustomFields",
+      "summary": "Opportunity custom fields List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/opportunities/{id}/custom-fields",
+      "operation": "updateOpportunityCustomFields",
+      "summary": "Update opportunity custom fields",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/opportunities/{id}/smart-tags",
+      "operation": "getOpportunitySmartTags",
+      "summary": "Opportunity smart-tags list",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/opportunities/{id}/smart-tags",
+      "operation": "linkOpportunitySmartTags",
+      "summary": "Link smart tags to opportunity",
+      "contentType": "application/json"
+    }
+  ]
+}

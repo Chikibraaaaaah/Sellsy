@@ -1,0 +1,16 @@
+{
+  "object": "accounting-codes",
+  "apiVersion": "v1",
+  "endpoint": "https://apifeed.sellsy.com/0/",
+  "v1Only": false,
+  "note": "",
+  "source": "https://docs.sellsy.com/api/v1/documentation/methods",
+  "methods": [
+    "Accounting.getList",
+    "Accounting.getOne",
+    "Accounting.create",
+    "Accounting.update",
+    "Accounting.delete",
+    "Accounting.getPrefs"
+  ]
+}

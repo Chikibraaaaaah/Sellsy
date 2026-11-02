@@ -1,0 +1,233 @@
+{
+  "object": "subscriptions",
+  "operation": "createSubscription",
+  "sourceSchema": "SubscriptionCreate",
+  "fields": [
+    {
+      "field": "model.type",
+      "required": true,
+      "type": "string",
+      "enum": [
+        "model"
+      ],
+      "example": "model",
+      "description": "Template type"
+    },
+    {
+      "field": "model.id",
+      "required": true,
+      "type": "integer",
+      "example": 123,
+      "description": "Template id"
+    },
+    {
+      "field": "related[]",
+      "type": "array",
+      "required": true,
+      "description": "Objects linked to the subscription : \n  - A required company or individual, only \"client\" type.\n  - An optional contact can be added, it must be linked to the provided company.\n"
+    },
+    {
+      "field": "related[].id",
+      "required": true,
+      "type": "integer",
+      "example": 234,
+      "description": "ID of related"
+    },
+    {
+      "field": "related[].type",
+      "required": true,
+      "type": "string",
+      "enum": [
+        "company",
+        "individual",
+        "contact"
+      ],
+      "example": "company",
+      "description": "Type of related"
+    },
+    {
+      "field": "sending.mode",
+      "required": true,
+      "type": "string",
+      "enum": [
+        "automatic",
+        "manual"
+      ],
+      "example": "automatic",
+      "description": "Once the invoice has been generated, from subscription deadline, if sending mode is automatic, email will be sent to all recipients, otherwise, if it's manual, email should be send manually"
+    },
+    {
+      "field": "sending.recipients",
+      "type": "array",
+      "items": "object",
+      "required": false,
+      "description": "Email recipients"
+    },
+    {
+      "field": "sending.email_template",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "example": 12,
+      "description": "Id of email template. If not specified, the default email layout will be used"
+    },
+    {
+      "field": "preferences_source",
+      "required": true,
+      "type": "string",
+      "enum": [
+        "model",
+        "related"
+      ],
+      "description": "Source of payment preferences"
+    },
+    {
+      "field": "conditions.start_date",
+      "required": true,
+      "type": "string",
+      "format": "date",
+      "example": "2022-01-02",
+      "description": "Date to start subscription, must be greater than today"
+    },
+    {
+      "field": "conditions.interval",
+      "required": true,
+      "type": "?|object",
+      "description": "Interval for subscription deadlines"
+    },
+    {
+      "field": "payment_installments[]",
+      "type": "array",
+      "required": true,
+      "description": "Subscription payment installments to be generated"
+    },
+    {
+      "field": "payment_installments[].date",
+      "required": true,
+      "type": "string",
+      "format": "date",
+      "example": "2022-01-02",
+      "description": "Date of the payment installments. The date must not be over 2038-01-19.\n"
+    },
+    {
+      "field": "payment_installments[].sending_mode",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "automatic",
+        "manual"
+      ],
+      "description": "By default, the general preference \"sending.mode\" is applied to each payment installments, but it is possible to override the sending mode on each\n"
+    },
+    {
+      "field": "billing_address",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "example": 69,
+      "description": "Id of billing address"
+    },
+    {
+      "field": "shipping_address",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "example": 67,
+      "description": "Id of shipping address"
+    },
+    {
+      "field": "order_reference",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 100,
+      "example": "reference",
+      "description": "Order reference"
+    },
+    {
+      "field": "has_updated_catalog_prices",
+      "required": false,
+      "type": "boolean",
+      "default": false,
+      "description": "Update prices according to the products or services in the catalog"
+    },
+    {
+      "field": "has_catalog_promotions",
+      "required": false,
+      "type": "boolean",
+      "default": false,
+      "description": "Take into account catalog promotions"
+    },
+    {
+      "field": "has_display_of_next_deadline",
+      "required": false,
+      "type": "boolean",
+      "default": false,
+      "description": "Display the next recurrence date on the invoice"
+    },
+    {
+      "field": "has_service_dates",
+      "required": false,
+      "type": "boolean",
+      "default": false,
+      "description": "Display service dates on the invoice"
+    },
+    {
+      "field": "service_dates.start",
+      "required": false,
+      "type": "string",
+      "format": "date",
+      "example": "2023-01-01",
+      "description": "Start date for service"
+    },
+    {
+      "field": "service_dates.end",
+      "required": false,
+      "type": "string",
+      "format": "date",
+      "example": "2023-01-31",
+      "description": "End date for service <br/><br/> End date must be greater than start date\n"
+    },
+    {
+      "field": "has_impact_on_stock",
+      "required": false,
+      "type": "boolean",
+      "default": false,
+      "example": true,
+      "description": "Enable stock impact on new invoices generated by subscription <br/><br/> - Prerequisite: The Stock module must be enabled and configured on your account to use this option\n"
+    },
+    {
+      "field": "warehouse_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "description": "Specify the warehouse stock to be impacted once the invoice is generated <br/><br/> - Prerequisite: `has_impact_on_stock` should be true <br/> - Prerequisite: The Stock module must be enabled and configured on your account to use this option <br/><br/>If specified to null, the default warehouse defined in the Stock module preferences will be used\n"
+    },
+    {
+      "field": "payment_settings.direct_debit",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Activate direct debit"
+    },
+    {
+      "field": "payment_settings.mandate",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "example": 6,
+      "description": "Required if the direct debit module on document model is GoCardless"
+    },
+    {
+      "field": "payment_settings.payment_installment_invoice",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "invoice_due_date",
+        "invoice_generation_date"
+      ],
+      "example": "invoice_generation_date",
+      "description": "Payment installment invoice"
+    }
+  ]
+}

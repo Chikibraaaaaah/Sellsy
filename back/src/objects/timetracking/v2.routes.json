@@ -1,0 +1,8 @@
+{
+  "object": "timetracking",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {},
+  "updateMethod": null,
+  "routes": []
+}

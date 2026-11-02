@@ -1,0 +1,58 @@
+{
+  "object": "comments",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createComment",
+    "list": "getComments",
+    "search": "searchComments",
+    "get": "getComment",
+    "update": "updateComment",
+    "delete": "deleteComment"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/comments",
+      "operation": "getComments",
+      "summary": "Comments List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/comments",
+      "operation": "createComment",
+      "summary": "Create a comment",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/comments/{id}",
+      "operation": "deleteComment",
+      "summary": "Delete a comment",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/comments/{id}",
+      "operation": "getComment",
+      "summary": "Get comment details",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/comments/{id}",
+      "operation": "updateComment",
+      "summary": "Update a comment",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/comments/search",
+      "operation": "searchComments",
+      "summary": "Search comments",
+      "contentType": "application/json"
+    }
+  ]
+}

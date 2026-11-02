@@ -1,0 +1,347 @@
+{
+  "object": "companies",
+  "operation": "updateCompany",
+  "sourceSchema": "CompanyWritable",
+  "fields": [
+    {
+      "field": "id",
+      "required": false,
+      "type": "integer",
+      "example": 6657,
+      "description": "Unique ID"
+    },
+    {
+      "field": "type",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "prospect",
+        "client",
+        "supplier"
+      ]
+    },
+    {
+      "field": "name",
+      "required": false,
+      "type": "string",
+      "maxLength": 250,
+      "example": "Example company",
+      "description": "Company name"
+    },
+    {
+      "field": "email",
+      "required": false,
+      "type": "string",
+      "format": "email",
+      "nullable": true,
+      "example": "contact@example-company.com",
+      "description": "Company email"
+    },
+    {
+      "field": "website",
+      "required": false,
+      "type": "string",
+      "format": "url",
+      "nullable": true,
+      "example": "http://example-company.com",
+      "description": "Company website"
+    },
+    {
+      "field": "phone_number",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "+33100000000",
+      "description": "Company phone number"
+    },
+    {
+      "field": "mobile_number",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "+33600000000",
+      "description": "Company mobile number"
+    },
+    {
+      "field": "fax_number",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "+33100000000",
+      "description": "Company Fax number"
+    },
+    {
+      "field": "legal_france.siret",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "73282932000074",
+      "description": "Company Siret"
+    },
+    {
+      "field": "legal_france.siren",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "732829320",
+      "description": "Company Siren"
+    },
+    {
+      "field": "legal_france.vat",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "FR99999999999",
+      "description": "VAT number"
+    },
+    {
+      "field": "legal_france.ape_naf_code",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "4711C",
+      "description": "APE/NAF Code"
+    },
+    {
+      "field": "legal_france.company_type",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "SAS",
+      "description": "Company type"
+    },
+    {
+      "field": "legal_france.rcs_immatriculation",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "RCS xxxxx",
+      "description": "RCS immatriculation code"
+    },
+    {
+      "field": "capital",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "4000",
+      "description": "Company Capital"
+    },
+    {
+      "field": "reference",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "CLI-1654",
+      "description": "Company reference"
+    },
+    {
+      "field": "note",
+      "required": false,
+      "type": "string",
+      "example": "An handed-written note describing this company",
+      "description": "Note on company"
+    },
+    {
+      "field": "auxiliary_code",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "0EX11C",
+      "description": "Auxiliary code"
+    },
+    {
+      "field": "social.twitter",
+      "required": false,
+      "type": "string",
+      "format": "url",
+      "nullable": true,
+      "example": "https://twitter.com/example",
+      "description": "Twitter account"
+    },
+    {
+      "field": "social.facebook",
+      "required": false,
+      "type": "string",
+      "format": "url",
+      "nullable": true,
+      "example": "https://facebook.com/example",
+      "description": "Facebook account"
+    },
+    {
+      "field": "social.linkedin",
+      "required": false,
+      "type": "string",
+      "format": "url",
+      "nullable": true,
+      "example": "https://linkedin.com/example",
+      "description": "Linkedin account"
+    },
+    {
+      "field": "social.viadeo",
+      "required": false,
+      "type": "string",
+      "format": "url",
+      "nullable": true,
+      "example": "https://viadeo.com/example",
+      "description": "Deprecated, no longer use"
+    },
+    {
+      "field": "social.instagram",
+      "required": false,
+      "type": "string",
+      "format": "url",
+      "nullable": true,
+      "example": "https://www.instagram.com/example",
+      "description": "Instagram account"
+    },
+    {
+      "field": "rate_category_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "example": 9956,
+      "description": "Company Rate category id"
+    },
+    {
+      "field": "main_contact_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "minimum": 1,
+      "example": 6654,
+      "description": "Main contact unique ID"
+    },
+    {
+      "field": "dunning_contact_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "minimum": 1,
+      "example": 6654,
+      "description": "Dunning contact unique ID"
+    },
+    {
+      "field": "invoicing_contact_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "minimum": 1,
+      "example": 6654,
+      "description": "Invoicing contact unique ID"
+    },
+    {
+      "field": "invoicing_address_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "minimum": 1,
+      "example": 9987,
+      "description": "Invoicing address unique ID"
+    },
+    {
+      "field": "delivery_address_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "minimum": 1,
+      "example": 6547,
+      "description": "Delivery address unique ID"
+    },
+    {
+      "field": "accounting_code_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "example": 12345,
+      "description": "Company accounting code id"
+    },
+    {
+      "field": "accounting_purchase_code_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "example": 98556,
+      "description": "Company accouting purchase code id"
+    },
+    {
+      "field": "created",
+      "required": false,
+      "type": "string",
+      "format": "date-time",
+      "nullable": false,
+      "example": "2020-05-29T11:22:03+02:00",
+      "description": "Datetime of creating company"
+    },
+    {
+      "field": "updated_at",
+      "required": false,
+      "type": "string",
+      "format": "date-time",
+      "nullable": false,
+      "example": "2020-05-29T11:22:03+02:00",
+      "description": "Datetime of the last update of the company"
+    },
+    {
+      "field": "is_archived",
+      "required": false,
+      "type": "boolean",
+      "nullable": false,
+      "example": false,
+      "description": "Status archived or not"
+    },
+    {
+      "field": "business_segment.id",
+      "required": false,
+      "type": "integer",
+      "example": 3
+    },
+    {
+      "field": "business_segment.label",
+      "required": false,
+      "type": "string",
+      "example": "Software publisher / Digital services company"
+    },
+    {
+      "field": "number_of_employees.id",
+      "required": false,
+      "type": "integer",
+      "example": 1
+    },
+    {
+      "field": "number_of_employees.label",
+      "required": false,
+      "type": "string",
+      "example": "From 1 to 5"
+    },
+    {
+      "field": "main_activity_description",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "Application software publishing",
+      "description": "Description of the company main activity"
+    },
+    {
+      "field": "marketing_campaigns_subscriptions",
+      "type": "array",
+      "items": "string",
+      "enum": [
+        "sms",
+        "phone",
+        "email",
+        "postal_mail",
+        "custom"
+      ],
+      "required": false,
+      "description": "list of campaign type subcribed"
+    },
+    {
+      "field": "einvoicing_electronic_address",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "987463775",
+      "description": "Default e-invoicing routing address identifier"
+    }
+  ]
+}

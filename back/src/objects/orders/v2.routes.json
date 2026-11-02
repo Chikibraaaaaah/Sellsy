@@ -1,0 +1,176 @@
+{
+  "object": "orders",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createOrder",
+    "list": "getOrders",
+    "search": "searchOrders",
+    "get": "getOrder",
+    "update": "updateOrder"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/orders",
+      "operation": "getOrders",
+      "summary": "Get all orders",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/orders",
+      "operation": "createOrder",
+      "summary": "Create an order",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/orders/compute",
+      "operation": "computeOrder",
+      "summary": "Compute an order",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/orders/{id}",
+      "operation": "getOrder",
+      "summary": "Get order",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/orders/{id}",
+      "operation": "updateOrder",
+      "summary": "Update an order",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/orders/search",
+      "operation": "searchOrders",
+      "summary": "Search orders",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/orders/{id}/payments",
+      "operation": "getOrderPayments",
+      "summary": "Order payments list",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/orders/{id}/smart-tags",
+      "operation": "getOrderSmartTags",
+      "summary": "Order smart tags List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/orders/{id}/smart-tags",
+      "operation": "linkOrderSmartTags",
+      "summary": "Link smart tags to an order",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/orders/{id}/custom-fields",
+      "operation": "getOrderCustomFields",
+      "summary": "Order custom fields List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/orders/{id}/custom-fields",
+      "operation": "updateOrderCustomFields",
+      "summary": "Update Order custom fields",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/orders/favourite-filters",
+      "operation": "getOrderFavouriteFilters",
+      "summary": "List orders favourite filters",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/orders/{documentId}/payments/{paymentId}",
+      "operation": "unlinkOrderPayment",
+      "summary": "Unlink payment from order",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/orders/{documentId}/payments/{paymentId}",
+      "operation": "linkOrderPayment",
+      "summary": "Link payment to order",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/orders/{documentId}/files",
+      "operation": "getOrderFiles",
+      "summary": "List directories and files of an orders",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/orders/{documentId}/files",
+      "operation": "uploadOrderFile",
+      "summary": "Attach file to an order",
+      "contentType": "multipart/form-data"
+    },
+    {
+      "method": "DELETE",
+      "path": "/orders/{orderId}/primes/{primeId}",
+      "operation": "unlinkOrderPrime",
+      "summary": "Unlink a prime from an order",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/orders/{orderId}/primes/{primeId}",
+      "operation": "linkOrderPrime",
+      "summary": "Link prime to order",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/orders/{orderId}/discount-incl-taxes/{discountId}",
+      "operation": "unlinkOrderDiscountInclTaxes",
+      "summary": "Unlink a discount including taxes from an order",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/orders/{orderId}/discount-incl-taxes/{discountId}",
+      "operation": "linkOrderDiscountInclTaxes",
+      "summary": "Link discount including taxes to order",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/orders/{id}/esign",
+      "operation": "cancelEsignOrder",
+      "summary": "Cancel esign for order",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/orders/{id}/esign",
+      "operation": "getEsignOrder",
+      "summary": "Get esign for order",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/orders/{id}/esign",
+      "operation": "createEsignOrder",
+      "summary": "Create esign for order",
+      "contentType": "application/json"
+    }
+  ]
+}

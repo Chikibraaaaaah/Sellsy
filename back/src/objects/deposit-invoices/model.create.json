@@ -1,0 +1,327 @@
+{
+  "object": "deposit-invoices",
+  "operation": "createDepositInvoice",
+  "sourceSchema": "DepositInvoiceCreateWritable",
+  "fields": [
+    {
+      "field": "parent",
+      "required": true,
+      "type": "object"
+    },
+    {
+      "field": "rows",
+      "type": "array",
+      "items": "object",
+      "required": true,
+      "description": "Rows of the deposit invoice. There must be as many deposit lines as there are VAT rates in the parent document. For example, if the parent document has products with VAT rates of 20% and 5.5%, there must be two 'deposit' rows.\"\n"
+    },
+    {
+      "field": "number",
+      "required": false,
+      "type": "string",
+      "nullable": false,
+      "example": "FACT-2022-01-02-002",
+      "description": "Deposit invoice number (shouldn't be provided if draft numbering is enabled)"
+    },
+    {
+      "field": "date",
+      "required": false,
+      "type": "string",
+      "format": "date",
+      "example": "2022-01-02",
+      "description": "Date of the invoice"
+    },
+    {
+      "field": "subject",
+      "required": false,
+      "type": "string",
+      "description": "Subject of the invoice"
+    },
+    {
+      "field": "currency",
+      "required": false,
+      "type": "string",
+      "example": "EUR",
+      "description": "Currency code of the invoice"
+    },
+    {
+      "field": "related[]",
+      "type": "array",
+      "required": false,
+      "description": "Objects linked to the deposit invoice :\n  - Contact is the contact of company linked to the deposit invoice. There may be no or one contact.\n"
+    },
+    {
+      "field": "related[].id",
+      "required": false,
+      "type": "integer",
+      "example": 234,
+      "description": "ID of related"
+    },
+    {
+      "field": "related[].type",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "contact"
+      ],
+      "example": "contact",
+      "description": "Type of related"
+    },
+    {
+      "field": "company_name",
+      "required": false,
+      "type": "string",
+      "description": "Company or individual name displayed on the invoice. If not provided, use company_name of the parent document."
+    },
+    {
+      "field": "company_reference",
+      "required": false,
+      "type": "string",
+      "description": "Company or individual reference displayed on the invoice. If not provided, use company_reference of the parent document."
+    },
+    {
+      "field": "public_link_enabled",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Public link of the invoice"
+    },
+    {
+      "field": "owner_id",
+      "required": false,
+      "type": "integer",
+      "minimum": 1,
+      "description": "Invoice's owner (staff id)"
+    },
+    {
+      "field": "assigned_staff_id",
+      "required": false,
+      "type": "integer",
+      "minimum": 1,
+      "description": "Invoice's assigned staff (staff id)"
+    },
+    {
+      "field": "invoicing_address_id",
+      "required": false,
+      "type": "integer",
+      "minimum": 1,
+      "description": "Invoicing address, by default take invoicing address of company/individual."
+    },
+    {
+      "field": "note",
+      "required": false,
+      "type": "string",
+      "maxLength": 65535,
+      "example": "This invoice is very important<br />",
+      "description": "Notes of the invoice"
+    },
+    {
+      "field": "analytic_code",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 13,
+      "example": "divers",
+      "description": "Analytic code of document"
+    },
+    {
+      "field": "payment_terms",
+      "required": false,
+      "type": "object",
+      "description": "Payment terms of the invoice\n"
+    },
+    {
+      "field": "bank_account_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "minimum": 1,
+      "description": "Bank account id"
+    },
+    {
+      "field": "payment_method_ids",
+      "type": "array",
+      "items": "integer",
+      "required": false,
+      "description": "Payments methods allowed on the invoice"
+    },
+    {
+      "field": "check_label_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "description": "Check label ID"
+    },
+    {
+      "field": "layout_id",
+      "required": false,
+      "type": "integer",
+      "description": "Document layout ID"
+    },
+    {
+      "field": "lang_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "description": "Language in which the dynamic elements of the document will be displayed (Descriptions and product names, payment methods, payment terms, etc.). Send null to use the default language."
+    },
+    {
+      "field": "settings.payments.payment_modules",
+      "type": "array",
+      "items": "string",
+      "enum": [
+        "stripe",
+        "atos",
+        "paypal",
+        "adyen",
+        "stancer"
+      ],
+      "required": false,
+      "description": ""
+    },
+    {
+      "field": "settings.payments.direct_debit_module",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "stripe",
+        "gocardless"
+      ],
+      "nullable": true
+    },
+    {
+      "field": "settings.pdf_display.show_bank_account",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show bank account information"
+    },
+    {
+      "field": "settings.pdf_display.show_check_label",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show check label information"
+    },
+    {
+      "field": "settings.pdf_display.show_siret",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show siret"
+    },
+    {
+      "field": "settings.pdf_display.show_siren",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show siren"
+    },
+    {
+      "field": "settings.pdf_display.show_vat_number",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show vat number"
+    },
+    {
+      "field": "settings.pdf_display.show_company_reference",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show company reference"
+    },
+    {
+      "field": "settings.pdf_display.show_payment_methods",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show payment methods"
+    },
+    {
+      "field": "settings.pdf_display.show_payment_terms",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show payment terms"
+    },
+    {
+      "field": "settings.pdf_display.show_payment_deadlines",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show payment deadlines"
+    },
+    {
+      "field": "settings.pdf_display.show_contact_name",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show contact name"
+    },
+    {
+      "field": "settings.pdf_display.show_vat_law_text",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show legal text dedicated to European VAT"
+    },
+    {
+      "field": "settings.pdf_display.show_late_penalty_warning_text",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show legal text on late payment interests"
+    },
+    {
+      "field": "settings.pdf_display.show_early_payment_discount_mention",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show the early payment discount mention"
+    },
+    {
+      "field": "settings.pdf_display.show_sale_type",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show sale type column on documents"
+    },
+    {
+      "field": "settings.pdf_display.show_terms_and_conditions_text",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show terms and conditions text page"
+    },
+    {
+      "field": "settings.assigned_staff_label_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "minimum": 1,
+      "description": "Assigned staff label displayed on document."
+    },
+    {
+      "field": "sale_type",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "product",
+        "service",
+        "mixed"
+      ],
+      "example": "product",
+      "description": "Sale type of the document: product (goods), service, or mixed. If not provided, it is automatically detected from the document rows."
+    },
+    {
+      "field": "einvoicing_electronic_address",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 255,
+      "example": "987463775",
+      "description": "E-invoicing routing address identifier for this document"
+    }
+  ]
+}

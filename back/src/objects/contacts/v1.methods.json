@@ -1,0 +1,20 @@
+{
+  "object": "contacts",
+  "apiVersion": "v1",
+  "endpoint": "https://apifeed.sellsy.com/0/",
+  "v1Only": false,
+  "note": "",
+  "source": "https://docs.sellsy.com/api/v1/documentation/methods",
+  "methods": [
+    "Peoples.getList",
+    "Peoples.getOne",
+    "Peoples.create",
+    "Peoples.update",
+    "Peoples.delete",
+    "Peoples.updateOwner",
+    "Peoples.getAddresses",
+    "Peoples.unlinkThirds",
+    "Peoples.updateSharingGroups",
+    "Peoples.updateSharingStaffs"
+  ]
+}

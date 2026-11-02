@@ -1,0 +1,14 @@
+{
+  "object": "briefcase",
+  "apiVersion": "v1",
+  "endpoint": "https://apifeed.sellsy.com/0/",
+  "v1Only": true,
+  "note": "Fichiers : v1.",
+  "source": "https://docs.sellsy.com/api/v1/documentation/methods",
+  "methods": [
+    "Briefcase.getList",
+    "Briefcase.uploadFile",
+    "Briefcase.delete",
+    "Briefcase.getRootFolders"
+  ]
+}

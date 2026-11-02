@@ -1,0 +1,163 @@
+{
+  "object": "individuals",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createIndividual",
+    "list": "getIndividuals",
+    "search": "searchIndividuals",
+    "get": "getIndividual",
+    "update": "updateIndividual",
+    "delete": "deleteIndividual"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/individuals",
+      "operation": "getIndividuals",
+      "summary": "Individuals List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/individuals",
+      "operation": "createIndividual",
+      "summary": "Create an individual",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/individuals/search",
+      "operation": "searchIndividuals",
+      "summary": "Search individuals",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/individuals/favourite-filters",
+      "operation": "getIndividualFavouriteFilters",
+      "summary": "List individuals favourite filters",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/individuals/{individualId}/files",
+      "operation": "getIndividualFiles",
+      "summary": "List directories and files of an individual",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/individuals/{individualId}/files",
+      "operation": "uploadIndividualFile",
+      "summary": "Attach file to an individual",
+      "contentType": "multipart/form-data"
+    },
+    {
+      "method": "GET",
+      "path": "/individuals/{id}/smart-tags",
+      "operation": "getIndividualSmartTags",
+      "summary": "Individual smart tags List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/individuals/{id}/smart-tags",
+      "operation": "linkIndividualSmartTags",
+      "summary": "Link smart tags to individual",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/individuals/{id}",
+      "operation": "deleteIndividual",
+      "summary": "Delete Individual",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/individuals/{id}",
+      "operation": "getIndividual",
+      "summary": "Get Individual",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/individuals/{id}",
+      "operation": "updateIndividual",
+      "summary": "Update Individual",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/individuals/{id}/convert",
+      "operation": "convertIndividual",
+      "summary": "Convert prospect individual to client individual",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/individuals/{individualId}/addresses",
+      "operation": "getIndividualAddresses",
+      "summary": "Get individual addresses",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/individuals/{individualId}/addresses",
+      "operation": "createIndividualAddress",
+      "summary": "Create an individual address",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/individuals/{individualId}/addresses/{id}",
+      "operation": "deleteIndividualAddress",
+      "summary": "Delete an individual address",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/individuals/{individualId}/addresses/{id}",
+      "operation": "getIndividualAddress",
+      "summary": "Get an individual address",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/individuals/{individualId}/addresses/{id}",
+      "operation": "updateIndividualAddress",
+      "summary": "Update an individual address",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/individuals/{id}/payments",
+      "operation": "createIndividualPayment",
+      "summary": "Record payment on an individual",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/individuals/{id}/contacts",
+      "operation": "getIndividualContacts",
+      "summary": "Get an individual contacts",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/individuals/{id}/custom-fields",
+      "operation": "getIndividualCustomFields",
+      "summary": "Individual custom fields List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/individuals/{id}/custom-fields",
+      "operation": "updateIndividualCustomFields",
+      "summary": "Update Individual custom fields",
+      "contentType": "application/json"
+    }
+  ]
+}

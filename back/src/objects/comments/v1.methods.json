@@ -1,0 +1,16 @@
+{
+  "object": "comments",
+  "apiVersion": "v1",
+  "endpoint": "https://apifeed.sellsy.com/0/",
+  "v1Only": false,
+  "note": "",
+  "source": "https://docs.sellsy.com/api/v1/documentation/methods",
+  "methods": [
+    "Annotations.getList",
+    "Annotations.getOne",
+    "Annotations.create",
+    "Annotations.update",
+    "Annotations.delete",
+    "Annotations.updateOwner"
+  ]
+}

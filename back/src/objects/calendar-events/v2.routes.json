@@ -1,0 +1,65 @@
+{
+  "object": "calendar-events",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createCalendarEvent",
+    "list": "getCalendarEvents",
+    "search": "searchCalendarEvents",
+    "get": "getCalendarEvent",
+    "update": "updateCalendarEvent",
+    "delete": "deleteCalendarEvent"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/calendar-events/labels",
+      "operation": "getCalendarEventsLabels",
+      "summary": "Get calendar events labels",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/calendar-events",
+      "operation": "getCalendarEvents",
+      "summary": "Calendar events List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/calendar-events",
+      "operation": "createCalendarEvent",
+      "summary": "Create a calendar event",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/calendar-events/{id}",
+      "operation": "deleteCalendarEvent",
+      "summary": "Delete calendar event",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/calendar-events/{id}",
+      "operation": "getCalendarEvent",
+      "summary": "Get calendar event",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/calendar-events/{id}",
+      "operation": "updateCalendarEvent",
+      "summary": "Update calendar event",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/calendar-events/search",
+      "operation": "searchCalendarEvents",
+      "summary": "Search calendar event",
+      "contentType": "application/json"
+    }
+  ]
+}

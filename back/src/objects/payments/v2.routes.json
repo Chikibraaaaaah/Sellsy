@@ -1,0 +1,63 @@
+{
+  "object": "payments",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "list": "getPayments",
+    "search": "searchPayments",
+    "get": "getPayment",
+    "delete": "deletePayment"
+  },
+  "updateMethod": null,
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/payments/methods/{id}",
+      "operation": "getPaymentMethod",
+      "summary": "Get the payment method",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/payments/methods",
+      "operation": "getPaymentMethods",
+      "summary": "List of all payment methods",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/payments/methods/search",
+      "operation": "searchPaymentMethods",
+      "summary": "Search methods of payment",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/payments/{id}",
+      "operation": "deletePayment",
+      "summary": "Delete payment",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/payments/{id}",
+      "operation": "getPayment",
+      "summary": "Get a payment",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/payments",
+      "operation": "getPayments",
+      "summary": "Get payments",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/payments/search",
+      "operation": "searchPayments",
+      "summary": "Search payments",
+      "contentType": "application/json"
+    }
+  ]
+}

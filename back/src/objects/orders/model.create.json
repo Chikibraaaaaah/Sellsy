@@ -1,0 +1,555 @@
+{
+  "object": "orders",
+  "operation": "createOrder",
+  "sourceSchema": "OrderCreateWritable",
+  "fields": [
+    {
+      "field": "number",
+      "required": false,
+      "type": "string",
+      "example": "ORD-00192",
+      "description": "Order number"
+    },
+    {
+      "field": "date",
+      "required": false,
+      "type": "string",
+      "format": "date",
+      "example": "2022-01-01",
+      "description": "Date of the order"
+    },
+    {
+      "field": "due_date",
+      "required": false,
+      "type": "string",
+      "format": "date",
+      "example": "2022-03-01",
+      "description": "Due date for signing the order"
+    },
+    {
+      "field": "created",
+      "required": false,
+      "type": "string",
+      "format": "date-time",
+      "example": "2022-01-01T00:00:00+00:00",
+      "description": "Creation date of order"
+    },
+    {
+      "field": "subject",
+      "required": false,
+      "type": "string",
+      "example": "Order subject",
+      "description": "Subject of the order"
+    },
+    {
+      "field": "currency",
+      "required": false,
+      "type": "string",
+      "example": "USD",
+      "description": "Currency code of the order"
+    },
+    {
+      "field": "discount.type",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "percent",
+        "amount"
+      ],
+      "example": "amount"
+    },
+    {
+      "field": "discount.value",
+      "required": false,
+      "type": "string",
+      "example": "25.20",
+      "description": "Value of discount"
+    },
+    {
+      "field": "related[]",
+      "type": "array",
+      "required": true,
+      "description": "Objects linked to the order :\n  - You must provide at least one company, individual or opportunity\n    - For a company or an individual, only `client` type\n  - You can provide as many opportunities as you wish, even if you already provide a company or an individual, as long as opportunities belong to them\n  - If you provide one or more contacts, they must belong to the company or individual\n"
+    },
+    {
+      "field": "related[].id",
+      "required": false,
+      "type": "integer",
+      "example": 90,
+      "description": "ID of related"
+    },
+    {
+      "field": "related[].type",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "company",
+        "individual",
+        "contact",
+        "opportunity"
+      ],
+      "example": "company",
+      "description": "Type of related"
+    },
+    {
+      "field": "public_link_enabled",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Public link of the order"
+    },
+    {
+      "field": "owner_id",
+      "required": false,
+      "type": "integer",
+      "minimum": 1,
+      "example": 50,
+      "description": "Order's owner (staff id)"
+    },
+    {
+      "field": "service_dates.start",
+      "required": false,
+      "type": "string",
+      "format": "date",
+      "example": "2023-01-01",
+      "description": "Start date for service"
+    },
+    {
+      "field": "service_dates.end",
+      "required": false,
+      "type": "string",
+      "format": "date",
+      "example": "2023-01-31",
+      "description": "End date for service <br/><br/> End date must be greater than start date"
+    },
+    {
+      "field": "assigned_staff_id",
+      "required": false,
+      "type": "integer",
+      "description": "Staff in charge of the document"
+    },
+    {
+      "field": "invoicing_address_id",
+      "required": false,
+      "type": "integer",
+      "minimum": 1,
+      "description": "Invoicing address, by default take invoicing address of company/individual."
+    },
+    {
+      "field": "delivery_address_id",
+      "required": false,
+      "type": "integer",
+      "minimum": 1,
+      "description": "Shipping address, by default take shipping address of company/individual."
+    },
+    {
+      "field": "issuer_address_id",
+      "required": false,
+      "type": "integer",
+      "description": "Issuer address, by default take main account address."
+    },
+    {
+      "field": "note",
+      "required": false,
+      "type": "string",
+      "maxLength": 65535,
+      "example": "This order is very important<br />",
+      "description": "Notes of the order"
+    },
+    {
+      "field": "shipping_date",
+      "required": false,
+      "type": "string",
+      "format": "date",
+      "nullable": true,
+      "description": "Date of the shipping"
+    },
+    {
+      "field": "company_reference",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 100,
+      "description": "Company or individual reference displayed on the document. If not provided, the reference of the linked company or individual is used."
+    },
+    {
+      "field": "analytic_code",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 13,
+      "example": "divers",
+      "description": "Analytic code of document"
+    },
+    {
+      "field": "sale_type",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "product",
+        "service",
+        "mixed"
+      ],
+      "example": "product",
+      "description": "Sale type of the document: product (goods), service, or mixed. If not provided, it is automatically detected from the document rows."
+    },
+    {
+      "field": "bank_account_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "minimum": 1,
+      "description": "Bank account ID"
+    },
+    {
+      "field": "payment_method_ids",
+      "type": "array",
+      "items": "integer",
+      "required": false,
+      "description": "payments methods allowed on the order"
+    },
+    {
+      "field": "eco_tax_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "description": "Deprecated field: eco tax use now product tax_id <br/> Eco tax ID\n"
+    },
+    {
+      "field": "check_label_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "description": "Check label ID"
+    },
+    {
+      "field": "layout_id",
+      "required": false,
+      "type": "integer",
+      "description": "Document layout ID"
+    },
+    {
+      "field": "lang_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "description": "Language in which the dynamic elements of the document will be displayed (Descriptions and product names, payment methods, payment terms, etc.). Send null to use the default language."
+    },
+    {
+      "field": "vat_mode",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "debit",
+        "collection"
+      ],
+      "example": "debit",
+      "description": "VAT Mode"
+    },
+    {
+      "field": "vat_mention",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 255,
+      "example": "mention",
+      "description": "Deprecated field: a default mention is now applied, depending on the VAT mode of the order."
+    },
+    {
+      "field": "shipping_weight.unit",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "g",
+        "kg",
+        "oz",
+        "lb"
+      ],
+      "example": "g",
+      "description": "Unit of the weight"
+    },
+    {
+      "field": "shipping_weight.value",
+      "required": false,
+      "type": "string",
+      "example": "100.50",
+      "description": "weight"
+    },
+    {
+      "field": "shipping_volume",
+      "required": false,
+      "type": "string",
+      "description": "Total volume of product to ship in m3"
+    },
+    {
+      "field": "rows",
+      "type": "array",
+      "items": "object",
+      "required": false,
+      "description": ""
+    },
+    {
+      "field": "parent",
+      "required": false,
+      "type": "object",
+      "nullable": true
+    },
+    {
+      "field": "rate_category_id",
+      "required": false,
+      "type": "integer",
+      "example": 777,
+      "description": "Rate Category to apply on document (By default, the rate_category_id will be that of company)"
+    },
+    {
+      "field": "settings.payments.payment_modules",
+      "type": "array",
+      "items": "string",
+      "enum": [
+        "stripe",
+        "atos",
+        "paypal",
+        "adyen",
+        "stancer"
+      ],
+      "required": false,
+      "description": ""
+    },
+    {
+      "field": "settings.payments.direct_debit_module",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "stripe",
+        "gocardless"
+      ],
+      "nullable": true
+    },
+    {
+      "field": "settings.pdf_display.show_vat_mention",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Deprecated field: vat mention is now always shown on PDF"
+    },
+    {
+      "field": "settings.pdf_display.show_bank_account",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show bank account information"
+    },
+    {
+      "field": "settings.pdf_display.show_check_label",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show check label information"
+    },
+    {
+      "field": "settings.pdf_display.show_contact_name",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show contact name"
+    },
+    {
+      "field": "settings.pdf_display.show_siret",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show siret"
+    },
+    {
+      "field": "settings.pdf_display.show_siren",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show siren"
+    },
+    {
+      "field": "settings.pdf_display.show_vat_number",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show vat number"
+    },
+    {
+      "field": "settings.pdf_display.show_company_reference",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show company reference"
+    },
+    {
+      "field": "settings.pdf_display.show_payment_methods",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show payment methods"
+    },
+    {
+      "field": "settings.pdf_display.show_payment_terms",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show payment terms"
+    },
+    {
+      "field": "settings.pdf_display.show_payment_deadlines",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show payment deadlines"
+    },
+    {
+      "field": "settings.pdf_display.show_company_phone_number",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show company phone number"
+    },
+    {
+      "field": "settings.pdf_display.show_delivery_address",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show delivery address"
+    },
+    {
+      "field": "settings.pdf_display.show_barcode_values",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show barcode values"
+    },
+    {
+      "field": "settings.pdf_display.show_barcode_images",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show barcode image"
+    },
+    {
+      "field": "settings.pdf_display.show_reference_column",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show reference column"
+    },
+    {
+      "field": "settings.pdf_display.show_quantity_column",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show quantity column"
+    },
+    {
+      "field": "settings.pdf_display.show_image_column",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show image column"
+    },
+    {
+      "field": "settings.pdf_display.show_unit_cost_column",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show unit cost column"
+    },
+    {
+      "field": "settings.pdf_display.show_amount_column",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show amount column"
+    },
+    {
+      "field": "settings.pdf_display.show_taxes_column",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show taxes column"
+    },
+    {
+      "field": "settings.pdf_display.show_discount_column",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show discount column"
+    },
+    {
+      "field": "settings.pdf_display.show_vat_law_text",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show legal text dedicated to European VAT"
+    },
+    {
+      "field": "settings.pdf_display.show_late_penalty_warning_text",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show legal text on late payment interests"
+    },
+    {
+      "field": "settings.pdf_display.show_early_payment_discount_mention",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show the early payment discount mention"
+    },
+    {
+      "field": "settings.pdf_display.show_sale_type",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show sale type column on documents"
+    },
+    {
+      "field": "settings.pdf_display.show_terms_and_conditions_text",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show terms and conditions text page"
+    },
+    {
+      "field": "settings.shipping.parcel_count",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "minimum": 0,
+      "maximum": 999999,
+      "example": 1,
+      "description": "Number of parcels"
+    },
+    {
+      "field": "settings.shipping.tracking_url",
+      "required": false,
+      "type": "string",
+      "format": "uri",
+      "nullable": true,
+      "maxLength": 250,
+      "example": "https://www.laposte.fr/outils/suivre-vos-envois",
+      "description": "Tracking URL"
+    },
+    {
+      "field": "settings.shipping.tracking_number",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 50,
+      "example": "1Z9999999",
+      "description": "Tracking number"
+    },
+    {
+      "field": "settings.assigned_staff_label_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "minimum": 1,
+      "description": "Assigned staff label displayed on document."
+    }
+  ]
+}

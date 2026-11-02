@@ -1,0 +1,15 @@
+{
+  "name": "sellsy-import-back",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Back de la plateforme d'import Sellsy : un sous-dossier par objet, API v2 (JSON) puis v1 (champs de formulaire) en complément.",
+  "main": "src/server.js",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

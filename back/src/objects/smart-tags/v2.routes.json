@@ -1,0 +1,25 @@
+{
+  "object": "smart-tags",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "delete": "deleteSmartTags"
+  },
+  "updateMethod": null,
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/smart-tags/{linkedtype}/autocomplete",
+      "operation": "autocompleteSmartTags",
+      "summary": "Smart tags autocomplete",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/smart-tags/{id}",
+      "operation": "deleteSmartTags",
+      "summary": "Delete a smart tags",
+      "contentType": "application/json"
+    }
+  ]
+}

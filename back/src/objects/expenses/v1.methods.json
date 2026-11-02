@@ -1,0 +1,17 @@
+{
+  "object": "expenses",
+  "apiVersion": "v1",
+  "endpoint": "https://apifeed.sellsy.com/0/",
+  "v1Only": true,
+  "note": "Notes de frais : v1 uniquement.",
+  "source": "https://docs.sellsy.com/api/v1/documentation/methods",
+  "methods": [
+    "Expense.getList",
+    "Expense.getOne",
+    "Expense.create",
+    "Expense.update",
+    "Expense.delete",
+    "Expense.getNextIdent",
+    "Expense.uploadRelatedFile"
+  ]
+}

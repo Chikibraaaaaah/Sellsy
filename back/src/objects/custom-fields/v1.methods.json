@@ -1,0 +1,20 @@
+{
+  "object": "custom-fields",
+  "apiVersion": "v1",
+  "endpoint": "https://apifeed.sellsy.com/0/",
+  "v1Only": false,
+  "note": "v2 ne permet que la lecture des champs personnalisés : création via v1.",
+  "source": "https://docs.sellsy.com/api/v1/documentation/methods",
+  "methods": [
+    "CustomFields.getList",
+    "CustomFields.getOne",
+    "CustomFields.create",
+    "CustomFields.update",
+    "CustomFields.delete",
+    "CustomFields.recordValues",
+    "CustomFields.getGroupsList",
+    "CustomFields.createGroup",
+    "CustomFields.updateGroup",
+    "CustomFields.deleteGroup"
+  ]
+}

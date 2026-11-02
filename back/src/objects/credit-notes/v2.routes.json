@@ -1,0 +1,183 @@
+{
+  "object": "credit-notes",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createCreditNote",
+    "list": "getCreditNotes",
+    "search": "searchCreditNotes",
+    "get": "getCreditNote",
+    "update": "updateCreditNote"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/credit-notes/{id}",
+      "operation": "getCreditNote",
+      "summary": "Get credit note",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/credit-notes/{id}",
+      "operation": "updateCreditNote",
+      "summary": "Update credit note",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/credit-notes",
+      "operation": "getCreditNotes",
+      "summary": "Credit notes List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/credit-notes",
+      "operation": "createCreditNote",
+      "summary": "Create credit note",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/credit-notes/search",
+      "operation": "searchCreditNotes",
+      "summary": "Search credit notes",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/credit-notes/favourite-filters",
+      "operation": "getCreditNoteFavouriteFilters",
+      "summary": "List credit-notes favourite filters",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/credit-notes/compute",
+      "operation": "computeCreditNote",
+      "summary": "Compute a credit note",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/credit-notes/{id}/smart-tags",
+      "operation": "getCreditNoteSmartTags",
+      "summary": "Credit note smart-tags list",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/credit-notes/{id}/smart-tags",
+      "operation": "linkCreditNoteSmartTags",
+      "summary": "Link smart tags to credit note",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/credit-notes/{id}/validate",
+      "operation": "validateCreditNote",
+      "summary": "Validate credit note",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/credit-notes/{id}/custom-fields",
+      "operation": "getCreditNoteCustomFields",
+      "summary": "Credit note custom fields List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/credit-notes/{id}/custom-fields",
+      "operation": "updateCreditNoteCustomFields",
+      "summary": "Update credit note custom fields",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/credit-notes/{id}/invoices",
+      "operation": "getCreditNoteInvoices",
+      "summary": "Get invoices linked to credit note",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/credit-notes/{creditNoteId}/invoices/{invoiceId}",
+      "operation": "unlinkCreditNoteInvoices",
+      "summary": "Unlink an invoice from a credit note",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/credit-notes/{creditNoteId}/invoices/{invoiceId}",
+      "operation": "linkInvoiceToCreditNote",
+      "summary": "Link an invoice to a credit note",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/credit-notes/{id}/payments",
+      "operation": "getCreditNotePayments",
+      "summary": "Credit note payments list",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/credit-notes/{documentId}/payments/{paymentId}",
+      "operation": "unlinkCreditNotePayment",
+      "summary": "Unlink payment from credit note",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/credit-notes/{documentId}/payments/{paymentId}",
+      "operation": "linkCreditNotePayment",
+      "summary": "Link payment to credit note",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/credit-notes/{documentId}/files",
+      "operation": "getCreditNoteFiles",
+      "summary": "List directories and files of a credit note",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/credit-notes/{documentId}/files",
+      "operation": "uploadCreditNoteFile",
+      "summary": "Attach file to an credit note",
+      "contentType": "multipart/form-data"
+    },
+    {
+      "method": "DELETE",
+      "path": "/credit-notes/{creditNoteId}/primes/{primeId}",
+      "operation": "unlinkCreditNotePrime",
+      "summary": "Unlink a prime from a credit note",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/credit-notes/{creditNoteId}/primes/{primeId}",
+      "operation": "linkCreditNotePrime",
+      "summary": "Link prime to credit note",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/credit-notes/{creditNoteId}/discount-incl-taxes/{discountId}",
+      "operation": "unlinkCreditNoteDiscountInclTaxes",
+      "summary": "Unlink a discount including taxes from a credit note",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/credit-notes/{creditNoteId}/discount-incl-taxes/{discountId}",
+      "operation": "linkCreditNoteDiscountInclTaxes",
+      "summary": "Link discount including taxes to credit note",
+      "contentType": "application/json"
+    }
+  ]
+}
