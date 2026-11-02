@@ -1,0 +1,48 @@
+{
+  "object": "custom-activities",
+  "operation": "putCustomActivitiesId",
+  "sourceSchema": "CustomActivityWritable",
+  "fields": [
+    {
+      "field": "type_id",
+      "required": false,
+      "type": "string",
+      "example": "vJ340fF1",
+      "description": "Activity type identifier"
+    },
+    {
+      "field": "action",
+      "required": false,
+      "type": "string",
+      "example": "Jean-pierre has opened a new ticket on Xeno."
+    },
+    {
+      "field": "relation.type",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "client",
+        "prospect",
+        "supplier",
+        "opportunity",
+        "contact"
+      ],
+      "example": "prospect"
+    },
+    {
+      "field": "relation.id",
+      "required": false,
+      "type": "integer",
+      "example": 123
+    },
+    {
+      "field": "date",
+      "required": false,
+      "type": "string",
+      "format": "date-time",
+      "default": "Current datetime",
+      "example": "1970-01-01T00:00:00+00:00",
+      "description": "Date of activity (ISO 8601)"
+    }
+  ]
+}

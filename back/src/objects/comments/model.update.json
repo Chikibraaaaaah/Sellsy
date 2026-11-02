@@ -1,0 +1,30 @@
+{
+  "object": "comments",
+  "operation": "updateComment",
+  "sourceSchema": "CommentUpdateItem",
+  "fields": [
+    {
+      "field": "description",
+      "required": false,
+      "type": "string",
+      "nullable": false,
+      "example": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "description": "Comment content"
+    },
+    {
+      "field": "timetracking.duration",
+      "required": false,
+      "type": "integer",
+      "minimum": 1,
+      "example": 3600,
+      "description": "Timetracking duration in seconds"
+    },
+    {
+      "field": "timetracking.service",
+      "required": false,
+      "type": "integer",
+      "example": 6352439,
+      "description": "Timetracking service ID related"
+    }
+  ]
+}

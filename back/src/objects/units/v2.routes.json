@@ -1,0 +1,18 @@
+{
+  "object": "units",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "list": "getUnits"
+  },
+  "updateMethod": null,
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/units",
+      "operation": "getUnits",
+      "summary": "Get Units",
+      "contentType": "application/json"
+    }
+  ]
+}

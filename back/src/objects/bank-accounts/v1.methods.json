@@ -1,0 +1,17 @@
+{
+  "object": "bank-accounts",
+  "apiVersion": "v1",
+  "endpoint": "https://apifeed.sellsy.com/0/",
+  "v1Only": false,
+  "note": "v2 : lecture seule (GET /bank-accounts).",
+  "source": "https://docs.sellsy.com/api/v1/documentation/methods",
+  "methods": [
+    "BankAccounts.getList",
+    "BankAccounts.getOne",
+    "BankAccounts.create",
+    "BankAccounts.update",
+    "BankAccounts.delete",
+    "BankAccounts.massCreate",
+    "BankAccounts.massUpdate"
+  ]
+}

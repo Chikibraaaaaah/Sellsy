@@ -1,0 +1,56 @@
+{
+  "object": "directories",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createDirectory",
+    "get": "getDirectory",
+    "update": "updateDirectory",
+    "delete": "deleteDirectory"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/directories",
+      "operation": "createDirectory",
+      "summary": "Create directory",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/directories/{id}",
+      "operation": "deleteDirectory",
+      "summary": "Delete the directory and all items attached",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/directories/{id}",
+      "operation": "getDirectory",
+      "summary": "Get directory",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/directories/{id}",
+      "operation": "updateDirectory",
+      "summary": "Update directory",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/directories/{id}/files",
+      "operation": "getDirectoryFiles",
+      "summary": "List directories and files in a directory",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/directories/{id}/files",
+      "operation": "uploadDirectoryFile",
+      "summary": "Attach file to a directory",
+      "contentType": "multipart/form-data"
+    }
+  ]
+}

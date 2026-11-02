@@ -1,0 +1,23 @@
+{
+  "object": "calendar-events",
+  "apiVersion": "v1",
+  "endpoint": "https://apifeed.sellsy.com/0/",
+  "v1Only": false,
+  "note": "",
+  "source": "https://docs.sellsy.com/api/v1/documentation/methods",
+  "methods": [
+    "Agenda.getList",
+    "Agenda.getOne",
+    "Agenda.create",
+    "Agenda.update",
+    "Agenda.delete",
+    "Agenda.updateOwner",
+    "Agenda.updateStatus",
+    "Agenda.getAvailableRappels",
+    "Agenda.getAvailableLabels",
+    "Agenda.getLabel",
+    "Agenda.createLabel",
+    "Agenda.updateLabel",
+    "Agenda.deleteLabel"
+  ]
+}

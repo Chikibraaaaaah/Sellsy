@@ -1,0 +1,79 @@
+{
+  "object": "taxes",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createTax",
+    "list": "getTaxes",
+    "search": "searchTaxes",
+    "get": "getTax",
+    "update": "updateTax",
+    "delete": "deleteTax"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/taxes",
+      "operation": "getTaxes",
+      "summary": "Taxes list",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/taxes",
+      "operation": "createTax",
+      "summary": "Create tax",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/taxes/search",
+      "operation": "searchTaxes",
+      "summary": "Search taxes",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/taxes/{id}",
+      "operation": "deleteTax",
+      "summary": "Delete tax",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/taxes/{id}",
+      "operation": "getTax",
+      "summary": "Get Tax",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/taxes/{id}",
+      "operation": "updateTax",
+      "summary": "Update tax",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/taxes/accounting-codes",
+      "operation": "getTaxesAccountingCharts",
+      "summary": "Taxes accounting codes list",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/taxes/{id}/accounting-codes",
+      "operation": "getTaxAccountingChart",
+      "summary": "Tax accounting codes list",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/taxes/{id}/accounting-codes",
+      "operation": "updateTaxAccountingChart",
+      "summary": "Update tax accounting codes",
+      "contentType": "application/json"
+    }
+  ]
+}

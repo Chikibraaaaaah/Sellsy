@@ -1,0 +1,156 @@
+{
+  "object": "contacts",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createContact",
+    "list": "getContacts",
+    "search": "searchContacts",
+    "get": "getContact",
+    "update": "updateContact",
+    "delete": "deleteContact"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/contacts/{id}/companies",
+      "operation": "getContactCompanies",
+      "summary": "Companies contact",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/contacts",
+      "operation": "getContacts",
+      "summary": "Contacts List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/contacts",
+      "operation": "createContact",
+      "summary": "Create a contact",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/contacts/search",
+      "operation": "searchContacts",
+      "summary": "Search contacts",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/contacts/export",
+      "operation": "exportContacts",
+      "summary": "Export contacts",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/contacts/favourite-filters",
+      "operation": "getContactFavouriteFilters",
+      "summary": "List contacts favourite filters",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/contacts/{id}",
+      "operation": "deleteContact",
+      "summary": "Delete contact",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/contacts/{id}",
+      "operation": "getContact",
+      "summary": "Get contact",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/contacts/{id}",
+      "operation": "updateContact",
+      "summary": "Update contact",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/contacts/{contactId}/addresses",
+      "operation": "getContactAddresses",
+      "summary": "Get contact addresses",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/contacts/{contactId}/addresses",
+      "operation": "createContactAddress",
+      "summary": "Create a contact address",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/contacts/{contactId}/addresses/{id}",
+      "operation": "deleteContactAddress",
+      "summary": "Delete a contact address",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/contacts/{contactId}/addresses/{id}",
+      "operation": "getContactAddress",
+      "summary": "Get a contact address",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/contacts/{contactId}/addresses/{id}",
+      "operation": "updateContactAddress",
+      "summary": "Update a contact address",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/contacts/{contactId}/custom-fields",
+      "operation": "getContactCustomFields",
+      "summary": "Contact custom fields List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/contacts/{contactId}/custom-fields",
+      "operation": "updateContactCustomFields",
+      "summary": "Update contact custom fields",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/contacts/{contactId}/files",
+      "operation": "getContactFiles",
+      "summary": "List directories and files of a contact",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/contacts/{contactId}/files",
+      "operation": "uploadContactFile",
+      "summary": "Attach file to a contact",
+      "contentType": "multipart/form-data"
+    },
+    {
+      "method": "GET",
+      "path": "/contacts/{contactId}/smart-tags",
+      "operation": "getContactSmartTags",
+      "summary": "Contact smart tags List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/contacts/{contactId}/smart-tags",
+      "operation": "linkContactSmartTags",
+      "summary": "Link smart tags to contact",
+      "contentType": "application/json"
+    }
+  ]
+}

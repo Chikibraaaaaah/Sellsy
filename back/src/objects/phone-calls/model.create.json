@@ -1,0 +1,134 @@
+{
+  "object": "phone-calls",
+  "operation": "createPhoneCall",
+  "sourceSchema": "PhoneCallCreateItem",
+  "fields": [
+    {
+      "field": "owner_id",
+      "required": true,
+      "type": "integer",
+      "minimum": 1,
+      "description": "Owner of the phone call (Staff id expected)"
+    },
+    {
+      "field": "topic",
+      "required": false,
+      "type": "integer",
+      "description": "Phone call topic"
+    },
+    {
+      "field": "result",
+      "required": true,
+      "type": "string",
+      "enum": [
+        "noanswer",
+        "busy",
+        "wrongnumber",
+        "msgdirect",
+        "msgvocal",
+        "connected",
+        "transfer",
+        "interrupt",
+        "scheduled",
+        "unknown"
+      ],
+      "description": "Phone call result"
+    },
+    {
+      "field": "source",
+      "required": true,
+      "type": "string",
+      "enum": [
+        "incoming",
+        "outcoming"
+      ],
+      "description": "Incoming call or Outgoing call"
+    },
+    {
+      "field": "description",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+      "description": "Description of the phone call"
+    },
+    {
+      "field": "duration",
+      "required": false,
+      "type": "integer",
+      "example": 12345,
+      "description": "Total duration of call (in seconds)\n\n*Note:* for phone calls with the \"scheduled\" result, this value is forcibly set to zero.\n"
+    },
+    {
+      "field": "date",
+      "required": true,
+      "type": "string",
+      "format": "date-time",
+      "example": "2020-01-01T00:00:00+01:00",
+      "description": "Date and hour of phone call"
+    },
+    {
+      "field": "related[]",
+      "type": "array",
+      "required": true,
+      "description": "List objects related to the phone call (limit to 1 of each type)"
+    },
+    {
+      "field": "related[].id",
+      "required": false,
+      "type": "integer",
+      "example": 1
+    },
+    {
+      "field": "related[].type",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "opportunity",
+        "company",
+        "individual",
+        "contact"
+      ],
+      "example": "opportunity"
+    },
+    {
+      "field": "priority",
+      "required": false,
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Priority level of the phone call"
+    },
+    {
+      "field": "reminders[]",
+      "type": "array",
+      "required": false,
+      "description": "Phonecall reminders. Reminders will be discarded if the result is not \"scheduled\""
+    },
+    {
+      "field": "reminders[].medium",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "email"
+      ],
+      "description": "Medium through which the reminder will be sent"
+    },
+    {
+      "field": "reminders[].delay",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "instant",
+        "5min",
+        "15min",
+        "30min",
+        "1hour",
+        "1day",
+        "1week",
+        "1month"
+      ],
+      "description": "Delay before sending the reminder, relative to the phonecall time"
+    }
+  ]
+}

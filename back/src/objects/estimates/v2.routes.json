@@ -1,0 +1,190 @@
+{
+  "object": "estimates",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createEstimate",
+    "list": "getEstimates",
+    "search": "searchEstimates",
+    "get": "getEstimate",
+    "update": "updateEstimate"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/estimates",
+      "operation": "getEstimates",
+      "summary": "Get all estimates",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/estimates",
+      "operation": "createEstimate",
+      "summary": "Create estimate",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/estimates/search",
+      "operation": "searchEstimates",
+      "summary": "Search estimates",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/estimates/export",
+      "operation": "exportEstimates",
+      "summary": "Export estimates",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/estimates/{id}/custom-fields",
+      "operation": "getEstimateCustomFields",
+      "summary": "Estimate custom fields List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/estimates/{id}/custom-fields",
+      "operation": "updateEstimateCustomFields",
+      "summary": "Update Estimate custom fields",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/estimates/favourite-filters",
+      "operation": "getEstimateFavouriteFilters",
+      "summary": "List estimates favourite filters",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/estimates/{id}",
+      "operation": "getEstimate",
+      "summary": "Get an estimate",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/estimates/{id}",
+      "operation": "updateEstimate",
+      "summary": "Update estimate",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/estimates/{id}/status",
+      "operation": "updateEstimateStatus",
+      "summary": "Update estimate status",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/estimates/compute",
+      "operation": "computeEstimate",
+      "summary": "Compute an estimate",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/estimates/{documentId}/files",
+      "operation": "getEstimateFiles",
+      "summary": "List directories and files of an estimate",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/estimates/{documentId}/files",
+      "operation": "uploadEstimateFile",
+      "summary": "Attach file to an estimate",
+      "contentType": "multipart/form-data"
+    },
+    {
+      "method": "GET",
+      "path": "/estimates/{id}/payments",
+      "operation": "getEstimatePayments",
+      "summary": "Estimate payments list",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/estimates/{documentId}/payments/{paymentId}",
+      "operation": "unlinkEstimatePayment",
+      "summary": "Unlink payment from estimate",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/estimates/{documentId}/payments/{paymentId}",
+      "operation": "linkEstimatePayment",
+      "summary": "Link payment to estimate",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/estimates/{id}/smart-tags",
+      "operation": "getEstimateSmartTags",
+      "summary": "Estimate smart-tags list",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/estimates/{id}/smart-tags",
+      "operation": "linkEstimateSmartTags",
+      "summary": "Link smart tags to estimate",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/estimates/{estimateId}/primes/{primeId}",
+      "operation": "unlinkEstimatePrime",
+      "summary": "Unlink a prime from an estimate",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/estimates/{estimateId}/primes/{primeId}",
+      "operation": "linkEstimatePrime",
+      "summary": "Link prime to estimate",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/estimates/{estimateId}/discount-incl-taxes/{discountId}",
+      "operation": "unlinkEstimateDiscountInclTaxes",
+      "summary": "Unlink a discount including taxes from an estimate",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/estimates/{estimateId}/discount-incl-taxes/{discountId}",
+      "operation": "linkEstimateDiscountInclTaxes",
+      "summary": "Link discount including taxes to estimate",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/estimates/{id}/esign",
+      "operation": "cancelEsignEstimate",
+      "summary": "Cancel esign for estimate",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/estimates/{id}/esign",
+      "operation": "getEsignEstimate",
+      "summary": "Get esign for estimate",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/estimates/{id}/esign",
+      "operation": "createEsignEstimate",
+      "summary": "Create esign for estimate",
+      "contentType": "application/json"
+    }
+  ]
+}

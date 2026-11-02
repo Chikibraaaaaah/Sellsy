@@ -1,0 +1,89 @@
+{
+  "object": "comments",
+  "operation": "createComment",
+  "sourceSchema": "CommentCreateItem",
+  "fields": [
+    {
+      "field": "description",
+      "required": true,
+      "type": "string",
+      "nullable": false,
+      "example": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "description": "Comment content"
+    },
+    {
+      "field": "timetracking.duration",
+      "required": false,
+      "type": "integer",
+      "minimum": 1,
+      "example": 3600,
+      "description": "Timetracking duration in seconds"
+    },
+    {
+      "field": "timetracking.service",
+      "required": false,
+      "type": "integer",
+      "example": 6352439,
+      "description": "Timetracking service ID related"
+    },
+    {
+      "field": "related[]",
+      "type": "array",
+      "required": false,
+      "description": "Main object related to the comment (limit to 1)"
+    },
+    {
+      "field": "related[].type",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "opportunity",
+        "company",
+        "individual",
+        "contact",
+        "item",
+        "estimate",
+        "creditnote",
+        "order",
+        "delivery",
+        "proforma",
+        "invoice",
+        "model",
+        "purchase-order",
+        "purchase-delivery",
+        "purchase-invoice",
+        "purchase-creditnote",
+        "redactor-template",
+        "redactor-document",
+        "campaign"
+      ],
+      "example": "opportunity"
+    },
+    {
+      "field": "related[].id",
+      "required": false,
+      "type": "integer",
+      "example": 123
+    },
+    {
+      "field": "parent_id",
+      "required": false,
+      "type": "integer",
+      "description": "Comment parent ID"
+    },
+    {
+      "field": "mentioned_staff_ids",
+      "type": "array",
+      "items": "integer",
+      "required": false,
+      "description": "Ids of staffs mentioned in the comment"
+    },
+    {
+      "field": "created",
+      "required": false,
+      "type": "string",
+      "format": "date-time",
+      "description": "Date of creation of the comment"
+    }
+  ]
+}

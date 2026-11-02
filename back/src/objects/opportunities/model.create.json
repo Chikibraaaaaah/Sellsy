@@ -1,0 +1,149 @@
+{
+  "object": "opportunities",
+  "operation": "createOpportunity",
+  "sourceSchema": "OpportunityCreate",
+  "fields": [
+    {
+      "field": "name",
+      "required": true,
+      "type": "string",
+      "example": "New website",
+      "description": "Opportunity name"
+    },
+    {
+      "field": "owner_id",
+      "required": false,
+      "type": "integer",
+      "minimum": 1,
+      "description": "Owner of the opportunity (staff id). If not provided, the ID of the logged-in staff will be used by default."
+    },
+    {
+      "field": "status",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "open",
+        "won",
+        "lost",
+        "cancelled",
+        "closed",
+        "late"
+      ],
+      "default": "open",
+      "example": "won",
+      "description": "Opportunity status"
+    },
+    {
+      "field": "pipeline",
+      "required": true,
+      "type": "integer",
+      "example": 9763,
+      "description": "Pipeline"
+    },
+    {
+      "field": "step",
+      "required": true,
+      "type": "integer",
+      "example": 299,
+      "description": "Pipeline Step"
+    },
+    {
+      "field": "amount",
+      "required": false,
+      "type": "string",
+      "example": "72000.99",
+      "description": "Potential Opportunity Amount (in the default currency selected for the account)"
+    },
+    {
+      "field": "probability",
+      "required": false,
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "example": 75,
+      "description": "Opportunity probability"
+    },
+    {
+      "field": "source",
+      "required": false,
+      "type": "integer",
+      "example": 1,
+      "description": "Source of opportunity creation (null will use the default defined in account preferences)"
+    },
+    {
+      "field": "due_date",
+      "required": false,
+      "type": "string",
+      "format": "date",
+      "nullable": true,
+      "example": "2020-02-01",
+      "description": "Due date of the opportunity"
+    },
+    {
+      "field": "note",
+      "required": false,
+      "type": "string",
+      "description": "Opportunity note"
+    },
+    {
+      "field": "main_doc_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "example": 22,
+      "description": "Internal ID of the main opportunity document"
+    },
+    {
+      "field": "assigned_staff_ids",
+      "type": "array",
+      "items": "integer",
+      "required": false,
+      "description": "Staff(s) ID assigned to the opportunity<br/> The same staff cannot be present more than once\n"
+    },
+    {
+      "field": "contact_ids",
+      "type": "array",
+      "items": "integer",
+      "required": false,
+      "description": "Contact(s) ID responsible for the opportunity"
+    },
+    {
+      "field": "related[]",
+      "type": "array",
+      "required": true,
+      "description": "Related objects :\n  - There can be only one company or one individual at a time (required)\n  - Contact should be linked to company/individual linked\n"
+    },
+    {
+      "field": "related[].id",
+      "required": true,
+      "type": "integer",
+      "minimum": 1,
+      "example": 1
+    },
+    {
+      "field": "related[].type",
+      "required": true,
+      "type": "string",
+      "enum": [
+        "company",
+        "individual",
+        "contact"
+      ],
+      "example": "company"
+    },
+    {
+      "field": "number",
+      "required": false,
+      "type": "string",
+      "example": "OPP-1155",
+      "description": "Opportunity number"
+    },
+    {
+      "field": "created",
+      "required": false,
+      "type": "string",
+      "format": "date-time",
+      "description": "Date of creation of the opportunity"
+    }
+  ]
+}

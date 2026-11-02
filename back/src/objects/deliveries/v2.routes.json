@@ -1,0 +1,34 @@
+{
+  "object": "deliveries",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "list": "getDeliveries",
+    "search": "searchDeliveries",
+    "get": "getDelivery"
+  },
+  "updateMethod": null,
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/deliveries",
+      "operation": "getDeliveries",
+      "summary": "Get all deliveries",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/deliveries/search",
+      "operation": "searchDeliveries",
+      "summary": "Search deliveries",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/deliveries/{id}",
+      "operation": "getDelivery",
+      "summary": "Get delivery",
+      "contentType": "application/json"
+    }
+  ]
+}

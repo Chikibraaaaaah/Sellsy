@@ -1,0 +1,15 @@
+{
+  "object": "custom-activity-types",
+  "operation": "postCustomActivityTypes",
+  "sourceSchema": "CustomActivityTypeWritable",
+  "fields": [
+    {
+      "field": "name",
+      "required": true,
+      "type": "string",
+      "minLength": 1,
+      "example": "Xeni",
+      "description": "Activity type name"
+    }
+  ]
+}

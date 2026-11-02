@@ -1,0 +1,22 @@
+{
+  "object": "purchases",
+  "apiVersion": "v1",
+  "endpoint": "https://apifeed.sellsy.com/0/",
+  "v1Only": true,
+  "note": "Achats fournisseurs : pas de ressource v2 dans l'inventaire (seulement l'OCR).",
+  "source": "https://docs.sellsy.com/api/v1/documentation/methods",
+  "methods": [
+    "Purchase.getList",
+    "Purchase.getOne",
+    "Purchase.create",
+    "Purchase.update",
+    "Purchase.delete",
+    "Purchase.updateStep",
+    "Purchase.updateDeliveryStep",
+    "Purchase.updateOwner",
+    "Purchase.getPublicLink",
+    "Purchase.getNextIdent",
+    "Purchase.getPayments",
+    "Purchase.updateSharingGroups"
+  ]
+}

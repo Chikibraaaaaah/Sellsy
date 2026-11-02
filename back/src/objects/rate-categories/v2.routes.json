@@ -1,0 +1,50 @@
+{
+  "object": "rate-categories",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createRateCategory",
+    "list": "getRateCategories",
+    "get": "getRateCategory",
+    "update": "updateRateCategory",
+    "delete": "deleteRateCategory"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/rate-categories",
+      "operation": "getRateCategories",
+      "summary": "Rate categories list",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/rate-categories",
+      "operation": "createRateCategory",
+      "summary": "Create rate category",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/rate-categories/{id}",
+      "operation": "deleteRateCategory",
+      "summary": "Delete Rate category",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/rate-categories/{id}",
+      "operation": "getRateCategory",
+      "summary": "Get rate category",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/rate-categories/{id}",
+      "operation": "updateRateCategory",
+      "summary": "Update a rate category",
+      "contentType": "application/json"
+    }
+  ]
+}

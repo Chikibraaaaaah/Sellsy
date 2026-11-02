@@ -1,0 +1,294 @@
+{
+  "object": "individuals",
+  "operation": "updateIndividual",
+  "sourceSchema": "IndividualWritable",
+  "fields": [
+    {
+      "field": "id",
+      "required": false,
+      "type": "integer",
+      "example": 6657,
+      "description": "Unique ID"
+    },
+    {
+      "field": "type",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "prospect",
+        "client",
+        "supplier"
+      ]
+    },
+    {
+      "field": "last_name",
+      "required": false,
+      "type": "string",
+      "maxLength": 200,
+      "example": "Martin",
+      "description": "Individual contact lastname"
+    },
+    {
+      "field": "first_name",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 200,
+      "example": "Jean",
+      "description": "Individual contact firstname"
+    },
+    {
+      "field": "civility",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "mr",
+        "mrs",
+        "ms"
+      ],
+      "nullable": true,
+      "example": "mr",
+      "description": "Civility of individual"
+    },
+    {
+      "field": "email",
+      "required": false,
+      "type": "string",
+      "format": "email",
+      "nullable": true,
+      "example": "jean.martin@personal-example.com",
+      "description": "Individual email"
+    },
+    {
+      "field": "website",
+      "required": false,
+      "type": "string",
+      "format": "url",
+      "nullable": true,
+      "example": "http://personal-example.com",
+      "description": "Individual website"
+    },
+    {
+      "field": "phone_number",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "+33100000000",
+      "description": "Phone number"
+    },
+    {
+      "field": "mobile_number",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "+33600000000",
+      "description": "Mobile number"
+    },
+    {
+      "field": "fax_number",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "+33100000000",
+      "description": "Fax number"
+    },
+    {
+      "field": "reference",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "IND-1654",
+      "description": "Internal reference"
+    },
+    {
+      "field": "note",
+      "required": false,
+      "type": "string",
+      "example": "An handed-written note describing this individual",
+      "description": "Note on individual"
+    },
+    {
+      "field": "auxiliary_code",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "0EX11C",
+      "description": "Auxiliary code"
+    },
+    {
+      "field": "social.twitter",
+      "required": false,
+      "type": "string",
+      "format": "url",
+      "nullable": true,
+      "example": "https://twitter.com/example",
+      "description": "Twitter account"
+    },
+    {
+      "field": "social.facebook",
+      "required": false,
+      "type": "string",
+      "format": "url",
+      "nullable": true,
+      "example": "https://facebook.com/example",
+      "description": "Facebook account"
+    },
+    {
+      "field": "social.linkedin",
+      "required": false,
+      "type": "string",
+      "format": "url",
+      "nullable": true,
+      "example": "https://linkedin.com/example",
+      "description": "Linkedin account"
+    },
+    {
+      "field": "social.viadeo",
+      "required": false,
+      "type": "string",
+      "format": "url",
+      "nullable": true,
+      "example": "https://viadeo.com/example",
+      "description": "Deprecated, no longer use"
+    },
+    {
+      "field": "social.instagram",
+      "required": false,
+      "type": "string",
+      "format": "url",
+      "nullable": true,
+      "example": "https://www.instagram.com/example",
+      "description": "Instagram account"
+    },
+    {
+      "field": "rate_category_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "example": 9956,
+      "description": "Rate category id"
+    },
+    {
+      "field": "main_contact_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "minimum": 1,
+      "example": 6654,
+      "description": "Main contact unique ID"
+    },
+    {
+      "field": "dunning_contact_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "minimum": 1,
+      "example": 6654,
+      "description": "Dunning contact unique ID"
+    },
+    {
+      "field": "invoicing_contact_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "minimum": 1,
+      "example": 6654,
+      "description": "Invoicing contact unique ID"
+    },
+    {
+      "field": "invoicing_address_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "minimum": 1,
+      "example": 9987,
+      "description": "Invoicing address unique ID"
+    },
+    {
+      "field": "delivery_address_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "minimum": 1,
+      "example": 6547,
+      "description": "Delivery address unique ID"
+    },
+    {
+      "field": "accounting_code_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "example": 12345,
+      "description": "Accounting code id"
+    },
+    {
+      "field": "accounting_purchase_code_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "example": 98556,
+      "description": "Accouting purchase code id"
+    },
+    {
+      "field": "created",
+      "required": false,
+      "type": "string",
+      "format": "date-time",
+      "nullable": false,
+      "example": "2020-05-29T11:22:03+02:00",
+      "description": "Datetime of creation"
+    },
+    {
+      "field": "updated_at",
+      "required": false,
+      "type": "string",
+      "format": "date-time",
+      "nullable": false,
+      "example": "2020-05-29T11:22:03+02:00",
+      "description": "Datetime of the last update of the individual"
+    },
+    {
+      "field": "is_archived",
+      "required": false,
+      "type": "boolean",
+      "nullable": false,
+      "example": false,
+      "description": "Status archived or not"
+    },
+    {
+      "field": "marketing_campaigns_subscriptions",
+      "type": "array",
+      "items": "string",
+      "enum": [
+        "sms",
+        "phone",
+        "email",
+        "postal_mail",
+        "custom"
+      ],
+      "required": false,
+      "description": "list of campaign type subcribed"
+    },
+    {
+      "field": "sync.mailchimp",
+      "required": false,
+      "type": "boolean",
+      "nullable": false,
+      "description": "Activate the mailchimp synchronization"
+    },
+    {
+      "field": "sync.mailjet",
+      "required": false,
+      "type": "boolean",
+      "nullable": false,
+      "description": "Activate the mailjet synchronization"
+    },
+    {
+      "field": "sync.simplemail",
+      "required": false,
+      "type": "boolean",
+      "nullable": false,
+      "description": "Activate the simplemail synchronization"
+    }
+  ]
+}

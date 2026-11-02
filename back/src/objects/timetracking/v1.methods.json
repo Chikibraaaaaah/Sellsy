@@ -1,0 +1,16 @@
+{
+  "object": "timetracking",
+  "apiVersion": "v1",
+  "endpoint": "https://apifeed.sellsy.com/0/",
+  "v1Only": true,
+  "note": "Temps passés : v1 uniquement.",
+  "source": "https://docs.sellsy.com/api/v1/documentation/methods",
+  "methods": [
+    "Timetracking.getList",
+    "Timetracking.getOrderedList",
+    "Timetracking.getOne",
+    "Timetracking.create",
+    "Timetracking.update",
+    "Timetracking.delete"
+  ]
+}

@@ -1,0 +1,421 @@
+/comments	GET	getComments	Comments List	json
+/comments	POST	createComment	Create a comment	json
+/comments/{id}	DELETE	deleteComment	Delete a comment	json
+/comments/{id}	GET	getComment	Get comment details	json
+/comments/{id}	PUT	updateComment	Update a comment	json
+/comments/search	POST	searchComments	Search comments	json
+/companies	GET	getCompanies	Companies List	json
+/companies	POST	createCompany	Create a company	json
+/companies/search	POST	searchCompanies	Search companies	json
+/companies/export	POST	exportCompanies	Export companies	json
+/companies/favourite-filters	GET	getCompanyFavouriteFilters	List companies favourite filters	json
+/companies/{id}	DELETE	deleteCompany	Delete company	json
+/companies/{id}	GET	getCompany	Get Company	json
+/companies/{id}	PUT	updateCompany	Update Company	json
+/companies/{id}/convert	POST	convertCompany	Convert prospect company to client company	json
+/companies/{companyId}/addresses	GET	getCompanyAddresses	Get company addresses	json
+/companies/{companyId}/addresses	POST	createCompanyAddress	Create a company address	json
+/companies/{companyId}/addresses/{id}	DELETE	deleteCompanyAddress	Delete a company address	json
+/companies/{companyId}/addresses/{id}	GET	getCompanyAddress	Get a company address	json
+/companies/{companyId}/addresses/{id}	PUT	updateCompanyAddress	Update a company address	json
+/companies/{id}/payments	POST	createCompanyPayment	Record payment on a company	json
+/companies/{id}/contacts	GET	getCompanyContacts	Get a company contacts	json
+/companies/{companyId}/contacts/{contactId}	DELETE	unlinkCompanyContact	Unlink a contact of company	json
+/companies/{companyId}/contacts/{contactId}	POST	linkCompanyContact	Link a contact at one company	json
+/companies/{companyId}/contacts/{contactId}	PUT	updateCompanyContact	Update a contact of company link	json
+/companies/{id}/custom-fields	GET	getCompanyCustomFields	Company custom fields List	json
+/companies/{id}/custom-fields	PUT	updateCompanyCustomFields	Update Company custom fields	json
+/companies/{companyId}/smart-tags	GET	getCompanySmartTags	Company smart tags List	json
+/companies/{companyId}/smart-tags	POST	linkCompanySmartTags	Link smart tags to company	json
+/companies/{companyId}/files	GET	getCompanyFiles	List directories and files of a company	json
+/companies/{companyId}/files	POST	uploadCompanyFile	Attach file to a company	multipart
+/contacts/{id}/companies	GET	getContactCompanies	Companies contact	json
+/smart-tags/{linkedtype}/autocomplete	GET	autocompleteSmartTags	Smart tags autocomplete	json
+/smart-tags/{id}	DELETE	deleteSmartTags	Delete a smart tags	json
+/custom-fields	GET	getCustomFields	Custom Fields List	json
+/custom-fields/{id}	GET	getCustomField	Get custom field	json
+/custom-fields/search	POST	searchCustomFields	Custom Fields Search	json
+/estimates	GET	getEstimates	Get all estimates	json
+/estimates	POST	createEstimate	Create estimate	json
+/estimates/search	POST	searchEstimates	Search estimates	json
+/estimates/export	POST	exportEstimates	Export estimates	json
+/estimates/{id}/custom-fields	GET	getEstimateCustomFields	Estimate custom fields List	json
+/estimates/{id}/custom-fields	PUT	updateEstimateCustomFields	Update Estimate custom fields	json
+/estimates/favourite-filters	GET	getEstimateFavouriteFilters	List estimates favourite filters	json
+/estimates/{id}	GET	getEstimate	Get an estimate	json
+/estimates/{id}	PUT	updateEstimate	Update estimate	json
+/estimates/{id}/status	PUT	updateEstimateStatus	Update estimate status	json
+/estimates/compute	POST	computeEstimate	Compute an estimate	json
+/estimates/{documentId}/files	GET	getEstimateFiles	List directories and files of an estimate	json
+/estimates/{documentId}/files	POST	uploadEstimateFile	Attach file to an estimate	multipart
+/estimates/{id}/payments	GET	getEstimatePayments	Estimate payments list	json
+/estimates/{documentId}/payments/{paymentId}	DELETE	unlinkEstimatePayment	Unlink payment from estimate	json
+/estimates/{documentId}/payments/{paymentId}	POST	linkEstimatePayment	Link payment to estimate	json
+/estimates/{id}/smart-tags	GET	getEstimateSmartTags	Estimate smart-tags list	json
+/estimates/{id}/smart-tags	POST	linkEstimateSmartTags	Link smart tags to estimate	json
+/estimates/{estimateId}/primes/{primeId}	DELETE	unlinkEstimatePrime	Unlink a prime from an estimate	json
+/estimates/{estimateId}/primes/{primeId}	POST	linkEstimatePrime	Link prime to estimate	json
+/estimates/{estimateId}/discount-incl-taxes/{discountId}	DELETE	unlinkEstimateDiscountInclTaxes	Unlink a discount including taxes from an estimate	json
+/estimates/{estimateId}/discount-incl-taxes/{discountId}	POST	linkEstimateDiscountInclTaxes	Link discount including taxes to estimate	json
+/estimates/{id}/esign	DELETE	cancelEsignEstimate	Cancel esign for estimate	json
+/estimates/{id}/esign	GET	getEsignEstimate	Get esign for estimate	json
+/estimates/{id}/esign	POST	createEsignEstimate	Create esign for estimate	json
+/orders	GET	getOrders	Get all orders	json
+/orders	POST	createOrder	Create an order	json
+/orders/compute	POST	computeOrder	Compute an order	json
+/orders/{id}	GET	getOrder	Get order	json
+/orders/{id}	PUT	updateOrder	Update an order	json
+/orders/search	POST	searchOrders	Search orders	json
+/orders/{id}/payments	GET	getOrderPayments	Order payments list	json
+/orders/{id}/smart-tags	GET	getOrderSmartTags	Order smart tags List	json
+/orders/{id}/smart-tags	POST	linkOrderSmartTags	Link smart tags to an order	json
+/orders/{id}/custom-fields	GET	getOrderCustomFields	Order custom fields List	json
+/orders/{id}/custom-fields	PUT	updateOrderCustomFields	Update Order custom fields	json
+/orders/favourite-filters	GET	getOrderFavouriteFilters	List orders favourite filters	json
+/orders/{documentId}/payments/{paymentId}	DELETE	unlinkOrderPayment	Unlink payment from order	json
+/orders/{documentId}/payments/{paymentId}	POST	linkOrderPayment	Link payment to order	json
+/orders/{documentId}/files	GET	getOrderFiles	List directories and files of an orders	json
+/orders/{documentId}/files	POST	uploadOrderFile	Attach file to an order	multipart
+/orders/{orderId}/primes/{primeId}	DELETE	unlinkOrderPrime	Unlink a prime from an order	json
+/orders/{orderId}/primes/{primeId}	POST	linkOrderPrime	Link prime to order	json
+/orders/{orderId}/discount-incl-taxes/{discountId}	DELETE	unlinkOrderDiscountInclTaxes	Unlink a discount including taxes from an order	json
+/orders/{orderId}/discount-incl-taxes/{discountId}	POST	linkOrderDiscountInclTaxes	Link discount including taxes to order	json
+/orders/{id}/esign	DELETE	cancelEsignOrder	Cancel esign for order	json
+/orders/{id}/esign	GET	getEsignOrder	Get esign for order	json
+/orders/{id}/esign	POST	createEsignOrder	Create esign for order	json
+/deliveries	GET	getDeliveries	Get all deliveries	json
+/deliveries/search	POST	searchDeliveries	Search deliveries	json
+/deliveries/{id}	GET	getDelivery	Get delivery	json
+/individuals	GET	getIndividuals	Individuals List	json
+/individuals	POST	createIndividual	Create an individual	json
+/individuals/search	POST	searchIndividuals	Search individuals	json
+/individuals/favourite-filters	GET	getIndividualFavouriteFilters	List individuals favourite filters	json
+/individuals/{individualId}/files	GET	getIndividualFiles	List directories and files of an individual	json
+/individuals/{individualId}/files	POST	uploadIndividualFile	Attach file to an individual	multipart
+/individuals/{id}/smart-tags	GET	getIndividualSmartTags	Individual smart tags List	json
+/individuals/{id}/smart-tags	POST	linkIndividualSmartTags	Link smart tags to individual	json
+/individuals/{id}	DELETE	deleteIndividual	Delete Individual	json
+/individuals/{id}	GET	getIndividual	Get Individual	json
+/individuals/{id}	PUT	updateIndividual	Update Individual	json
+/individuals/{id}/convert	POST	convertIndividual	Convert prospect individual to client individual	json
+/individuals/{individualId}/addresses	GET	getIndividualAddresses	Get individual addresses	json
+/individuals/{individualId}/addresses	POST	createIndividualAddress	Create an individual address	json
+/individuals/{individualId}/addresses/{id}	DELETE	deleteIndividualAddress	Delete an individual address	json
+/individuals/{individualId}/addresses/{id}	GET	getIndividualAddress	Get an individual address	json
+/individuals/{individualId}/addresses/{id}	PUT	updateIndividualAddress	Update an individual address	json
+/individuals/{id}/payments	POST	createIndividualPayment	Record payment on an individual	json
+/individuals/{id}/contacts	GET	getIndividualContacts	Get an individual contacts	json
+/individuals/{id}/custom-fields	GET	getIndividualCustomFields	Individual custom fields List	json
+/individuals/{id}/custom-fields	PUT	updateIndividualCustomFields	Update Individual custom fields	json
+/activities/crm	GET	getCrmActivities	Get the CRM activity	json
+/activities/crm/search	POST	searchCrmActivities	Search in CRM activity	json
+/activities/crm/export	POST	exportCrmActivities	Export the CRM activity	json
+/activities/crm/metas	GET	metaCrmActivities	Get meta informations for activity	json
+/listings/exports	GET	listListingExports	List exports	json
+/listings/exports/search	POST	searchListingExports	Search exports	json
+/listings/exports/export	POST	exportExports	Export the exports list	json
+/listings/exports/{id}	GET	getListingExport	Get an export status	json
+/listings/exports/{id}	PUT	updateListingExport	Update an export	json
+/listings/exports/{id}/reschedule	POST	rescheduleListingExport	Reschedule an export	json
+/custom-activities/{id}	DELETE	deleteCustomActivitiesId	Delete Custom Activity	json
+/custom-activities/{id}	GET	getCustomActivitiesId	Get Custom Activity	json
+/custom-activities/{id}	PUT	putCustomActivitiesId	Update Custom Activity	json
+/custom-activities	GET	getCustomActivities	Customs Activities List	json
+/custom-activities	POST	postCustomActivities	Create Custom Activity	json
+/custom-activities/search	POST	postCustomActivitiesSearch	Search Custom Activities	json
+/custom-activity-types/{id}	GET	getCustomActivityTypesId	Get Custom Activity Type	json
+/custom-activity-types/{id}	PUT	putCustomActivityTypesId	Update Custom Activity Type	json
+/custom-activity-types	GET	getCustomActivityTypes	Custom Activity Types List	json
+/custom-activity-types	POST	postCustomActivityTypes	Create Custom Activity Type	json
+/scopes	GET	getScopes	Scopes List	json
+/scopes/tree	GET	getScopesTree	Get Scopes Tree	json
+/clients	GET	listClients	List OAuth clients	json
+/clients/{id}	DELETE	deleteClients	Delete OAuth client	json
+/clients/{id}	GET	fetchClients	Get OAuth client	json
+/accounting-codes	GET	getAccountingCodes	Get accounting codes	json
+/accounting-codes	POST	createAccountingCode	Create an accounting code	json
+/accounting-codes/{id}	DELETE	deleteAccountingCode	Delete an accounting code	json
+/accounting-codes/search	POST	searchAccountingCodes	Search accounting codes	json
+/accounting-journal/{type}	GET	getAccountingJournal	Get accounting journal	json
+/accounting-journal/{type}/search	POST	searchAccountingJournal	Search accounting journal	json
+/accounting-journal/{type}/metas	GET	metaAccountingJournal	Get meta informations for accounting journal	json
+/accounting-journal/{type}/export	POST	exportAccountingJournal	Export accounting journal	json
+/taxes	GET	getTaxes	Taxes list	json
+/taxes	POST	createTax	Create tax	json
+/taxes/search	POST	searchTaxes	Search taxes	json
+/taxes/{id}	DELETE	deleteTax	Delete tax	json
+/taxes/{id}	GET	getTax	Get Tax	json
+/taxes/{id}	PUT	updateTax	Update tax	json
+/taxes/accounting-codes	GET	getTaxesAccountingCharts	Taxes accounting codes list	json
+/taxes/{id}/accounting-codes	GET	getTaxAccountingChart	Tax accounting codes list	json
+/taxes/{id}/accounting-codes	PUT	updateTaxAccountingChart	Update tax accounting codes	json
+/rate-categories	GET	getRateCategories	Rate categories list	json
+/rate-categories	POST	createRateCategory	Create rate category	json
+/rate-categories/{id}	DELETE	deleteRateCategory	Delete Rate category	json
+/rate-categories/{id}	GET	getRateCategory	Get rate category	json
+/rate-categories/{id}	PUT	updateRateCategory	Update a rate category	json
+/payments/methods/{id}	GET	getPaymentMethod	Get the payment method	json
+/payments/methods	GET	getPaymentMethods	List of all payment methods	json
+/payments/methods/search	POST	searchPaymentMethods	Search methods of payment	json
+/ocr/pur-invoice	GET	getOcrPurInvoice	Ocr List - Purchase invoices	json
+/ocr/pur-invoice/search	POST	searchOcrPurInvoice	Search OCR - Purchase invoices	json
+/ocr/pur-invoice/metas	GET	getOcrPurInvoiceMetas	Get Metadata for purchase invoice OCR	json
+/contacts	GET	getContacts	Contacts List	json
+/contacts	POST	createContact	Create a contact	json
+/contacts/search	POST	searchContacts	Search contacts	json
+/contacts/export	POST	exportContacts	Export contacts	json
+/contacts/favourite-filters	GET	getContactFavouriteFilters	List contacts favourite filters	json
+/contacts/{id}	DELETE	deleteContact	Delete contact	json
+/contacts/{id}	GET	getContact	Get contact	json
+/contacts/{id}	PUT	updateContact	Update contact	json
+/contacts/{contactId}/addresses	GET	getContactAddresses	Get contact addresses	json
+/contacts/{contactId}/addresses	POST	createContactAddress	Create a contact address	json
+/contacts/{contactId}/addresses/{id}	DELETE	deleteContactAddress	Delete a contact address	json
+/contacts/{contactId}/addresses/{id}	GET	getContactAddress	Get a contact address	json
+/contacts/{contactId}/addresses/{id}	PUT	updateContactAddress	Update a contact address	json
+/contacts/{contactId}/custom-fields	GET	getContactCustomFields	Contact custom fields List	json
+/contacts/{contactId}/custom-fields	PUT	updateContactCustomFields	Update contact custom fields	json
+/contacts/{contactId}/files	GET	getContactFiles	List directories and files of a contact	json
+/contacts/{contactId}/files	POST	uploadContactFile	Attach file to a contact	multipart
+/contacts/{contactId}/smart-tags	GET	getContactSmartTags	Contact smart tags List	json
+/contacts/{contactId}/smart-tags	POST	linkContactSmartTags	Link smart tags to contact	json
+/accounts/conformities	GET	getInvoicingConformityState	Retrieve invoicing conformity state	json
+/accounts/conformities	POST	activateInvoicingConformity	Activate invoice conformity (Definitively)	json
+/document-layouts	GET	getDocumentLayouts	Get all document layouts	json
+/accounts/documents	GET	getAccountsDocuments	Get your invoices and credit notes	json
+/opportunities/{id}	DELETE	deleteOpportunity	Delete an Opportunity	json
+/opportunities/{id}	GET	getOpportunity	Get Opportunity	json
+/opportunities/{id}	PATCH	patchOpportunity	Partially update opportunity	json
+/opportunities/{id}	PUT	updateOpportunity	Update Opportunity	json
+/opportunities/{id}/step-rank	PATCH	updateOpportunityRank	Update opportunity's rank and/or step	json
+/opportunities	GET	getOpportunities	Get Opportunities	json
+/opportunities	POST	createOpportunity	Create an opportunity	json
+/opportunities/{opportunityId}/files	GET	getOpportunityFiles	List directories and files of an opportunity	json
+/opportunities/{opportunityId}/files	POST	uploadOpportunityFile	Attach file to an opportunity	multipart
+/opportunities/search	POST	searchOpportunities	Search Opportunities	json
+/opportunities/export	POST	exportOpportunities	Export opportunities	json
+/opportunities/favourite-filters	GET	getOpportunityFavouriteFilters	List opportunities favourite filters	json
+/opportunities/sources	GET	getOpportunitySources	Get Opportunity Sources	json
+/opportunities/sources/search	POST	searchOpportunitySources	Search Opportunity Sources	json
+/opportunities/categories/{sourceCategoryId}/sources	GET	getOpportunityCategorySources	Get Opportunity Category Sources	json
+/opportunities/pipelines	GET	getOpportunityPipelines	Get Opportunity Pipelines	json
+/opportunities/pipelines/search	POST	searchOpportunityPipelines	Search Opportunity Pipelines	json
+/opportunities/pipelines/{pipelineId}/steps	GET	getOpportunityPipelineSteps	Get Opportunity Pipeline Steps	json
+/opportunities/pipelines/{pipelineId}/steps/search	POST	searchOpportunityPipelineSteps	Search Opportunity Pipeline Steps	json
+/opportunities/steps/search	POST	searchAllOpportunityPipelineSteps	Search All Opportunity Pipeline Steps	json
+/opportunities/categories	GET	getOpportunitiesCategories	Get Opportunities Categories List	json
+/opportunities/categories/{id}	GET	getOpportunitiesCategory	Get Opportunities Category	json
+/opportunities/{id}/custom-fields	GET	getOpportunityCustomFields	Opportunity custom fields List	json
+/opportunities/{id}/custom-fields	PUT	updateOpportunityCustomFields	Update opportunity custom fields	json
+/opportunities/{id}/smart-tags	GET	getOpportunitySmartTags	Opportunity smart-tags list	json
+/opportunities/{id}/smart-tags	POST	linkOpportunitySmartTags	Link smart tags to opportunity	json
+/tasks/{id}	DELETE	deleteTask	Delete a task	json
+/tasks/{id}	GET	getTask	Get a task	json
+/tasks/{id}	PUT	updateTask	Update a task	json
+/tasks	GET	getTasks	Tasks List	json
+/tasks	POST	createTask	Create a task	json
+/tasks/search	POST	searchTasks	Search Tasks	json
+/tasks/labels	GET	getTasksLabels	Get tasks labels	json
+/calendar-events/labels	GET	getCalendarEventsLabels	Get calendar events labels	json
+/staffs/{id}	GET	getStaff	Get Staff	json
+/staffs/{id}	PUT	updateStaff	Update Staff	json
+/staffs	GET	getStaffs	Get Staffs	json
+/staffs	POST	createStaff	Create a staff	json
+/staffs/search	POST	searchStaffs	Search Staffs	json
+/teams	GET	getTeams	Team List	json
+/profiles	GET	getProfiles	Profiles list	json
+/files/{id}	DELETE	deleteFile	Delete file	json
+/files/{id}	GET	getFile	Get file	json
+/files/{id}	PATCH	moveFile	Move a file to a new directory	json
+/search	GET	search	Search	json
+/calendars	GET	getCalendars	List provider calendars	json
+/calendar-events	GET	getCalendarEvents	Calendar events List	json
+/calendar-events	POST	createCalendarEvent	Create a calendar event	json
+/calendar-events/{id}	DELETE	deleteCalendarEvent	Delete calendar event	json
+/calendar-events/{id}	GET	getCalendarEvent	Get calendar event	json
+/calendar-events/{id}	PUT	updateCalendarEvent	Update calendar event	json
+/calendar-events/search	POST	searchCalendarEvents	Search calendar event	json
+/activities/search	POST	searchActivities	Search in activity	json
+/timeline/{type}/{id}/search	POST	searchTimeline	Timeline search	json
+/phone-calls/{id}	DELETE	deletePhoneCall	Delete a phoneCall	json
+/phone-calls/{id}	GET	getPhoneCall	Get a phoneCall	json
+/phone-calls/{id}	PUT	updatePhoneCall	Update a phoneCall	json
+/phone-calls	GET	getPhoneCalls	PhoneCalls List	json
+/phone-calls	POST	createPhoneCall	Create a phonecall	json
+/phone-calls/search	POST	searchPhoneCalls	Search phoneCalls	json
+/emails/{id}	GET	getEmail	Get Email	json
+/emails/threads/{id}	GET	getEmailThread	Get Emails Thread	json
+/email/send	POST	sendEmail	Send Email	json
+/email/authenticate	GET	getEmailDomainDnsData	Get email's domain DNS data	json
+/email/domain/validate	POST	validateEmailDomainDns	Validate email's DNS	json
+/email/attachment	POST	uploadEmailAttachment	Upload file for email	multipart
+/email/templates	GET	getEmailTemplates	Get list of your email templates	json
+/email/templates/{id}	GET	getEmailTemplate	Get email template	json
+/email/templates/{id}	POST	getEmailTemplateWithContent	Get your email template with context	json
+/email/templates/tags	GET	getEmailTemplateTags	Get available tags for email templates	json
+/email/system-templates/{context}	POST	getSystemEmailTemplateWithContent	Get system email template with content	json
+/webhooks	GET	getWebhooks	Get Webhooks	json
+/webhooks	POST	createWebhook	Create Webhook	json
+/webhooks/search	POST	searchWebhooks	Search Webhooks	json
+/webhooks/{id}	DELETE	deleteWebhook	Delete Webhook	json
+/webhooks/{id}	GET	getWebhook	Get Webhook	json
+/webhooks/{id}	PUT	updateWebhook	Update Webhook	json
+/webhooks/events	GET	getWebhookEvents	List Webhook Events	json
+/units	GET	getUnits	Get Units	json
+/currencies	GET	getCurrencies	Get currencies	json
+/countries	GET	getCountries	Get countries list	json
+/settings/subscription	GET	getAccountSubscription	Get my Sellsy subscription informations	json
+/items	GET	getItems	Items List	json
+/items	POST	createItem	Create an item	json
+/items/search	POST	searchItems	Search items	json
+/items/favourite-filters	GET	getItemFavouriteFilters	List items favourite filters	json
+/items/{id}	DELETE	deleteItem	Delete item	json
+/items/{id}	GET	getItem	Get an item	json
+/items/{id}	PUT	updateItem	Update an item	json
+/items/{id}/prices	GET	getItemPrices	Get item prices	json
+/items/{id}/prices	PUT	putItemPrices	Update item prices	json
+/items/{id}/declinations	GET	getItemDeclinations	Declinations List	json
+/items/{id}/declinations	POST	searchItemDeclinations	Search Declinations	json
+/items/{id}/declinations/{declinationId}/prices	GET	getItemDeclinationPrices	Get item declination prices	json
+/items/barcodes/search	POST	searchBarcodes	Search barcodes	json
+/staffs/{id}/licenses	DELETE	deleteStaffLicenses	Delete licenses	json
+/staffs/{id}/licenses	PUT	putStaffLicenses	Put staff licenses	json
+/quotas	GET	getQuotas	Get Quotas	json
+/batch	POST	createBatch	Batch request	json
+/notifications	GET	getNotifications	Get User Notifications	json
+/notifications/search	POST	searchNotifications	Search User Notifications	json
+/notifications/{id}	DELETE	deleteNotification	Delete notification	json
+/notifications/{id}/mark-as-read	PATCH	markNotificationAsRead	Mark notification as read	json
+/notifications/mark-all-as-read	PATCH	markAllNotificationsAsRead	Mark all unread notifications as read	json
+/notifications/settings	GET	getNotificationsSettings	Get Notifications settings	json
+/notifications/settings	PUT	putNotificationsSettings	Update Notifications settings	json
+/invoices/{id}	GET	getInvoice	Get invoice	json
+/invoices/{id}	PUT	updateInvoice	Update invoice	json
+/invoices	GET	getInvoices	Invoices List	json
+/invoices	POST	createInvoice	Create invoice	json
+/invoices/search	POST	searchInvoices	Search invoices	json
+/invoices/export	POST	exportInvoices	Export invoices	json
+/invoices/favourite-filters	GET	getInvoiceFavouriteFilters	List invoices favourite filters	json
+/invoices/compute	POST	computeInvoice	Compute an invoice	json
+/invoices/{id}/smart-tags	GET	getInvoiceSmartTags	Invoice smart-tags list	json
+/invoices/{id}/smart-tags	POST	linkInvoiceSmartTags	Link smart tags to invoice	json
+/invoices/{id}/validate	POST	validateInvoice	Validate Invoice	json
+/invoices/{id}/credit-notes	GET	getInvoiceCreditNotes	Get credit notes linked to invoice	json
+/invoices/{invoiceId}/credit-notes/{creditNoteId}	DELETE	unlinkInvoicesCreditNote	Unlink a credit note from an invoice	json
+/invoices/{invoiceId}/credit-notes/{creditNoteId}	POST	linkCreditNoteToInvoice	Link a credit note to an invoice	json
+/invoices/{id}/payments	GET	getInvoicePayments	Invoice payments list	json
+/invoices/{documentId}/payments/{paymentId}	DELETE	unlinkInvoicePayment	Unlink payment from invoice	json
+/invoices/{documentId}/payments/{paymentId}	POST	linkInvoicePayment	Link payment to invoice	json
+/invoices/{documentId}/files	GET	getInvoiceFiles	List directories and files of an invoice	json
+/invoices/{documentId}/files	POST	uploadInvoiceFile	Attach file to an invoice	multipart
+/invoices/{id}/custom-fields	GET	getInvoiceCustomFields	Invoice custom fields List	json
+/invoices/{id}/custom-fields	PUT	updateInvoiceCustomFields	Update Invoice custom fields	json
+/invoices/{invoiceId}/primes/{primeId}	DELETE	unlinkInvoicePrime	Unlink a prime from an invoice	json
+/invoices/{invoiceId}/primes/{primeId}	POST	linkInvoicePrime	Link prime to invoice	json
+/invoices/{invoiceId}/discount-incl-taxes/{discountId}	DELETE	unlinkInvoiceDiscountInclTaxes	Unlink a discount including taxes from an invoice	json
+/invoices/{invoiceId}/discount-incl-taxes/{discountId}	POST	linkInvoiceDiscountInclTaxes	Link discount including taxes to invoice	json
+/credit-notes/{id}	GET	getCreditNote	Get credit note	json
+/credit-notes/{id}	PUT	updateCreditNote	Update credit note	json
+/credit-notes	GET	getCreditNotes	Credit notes List	json
+/credit-notes	POST	createCreditNote	Create credit note	json
+/credit-notes/search	POST	searchCreditNotes	Search credit notes	json
+/credit-notes/favourite-filters	GET	getCreditNoteFavouriteFilters	List credit-notes favourite filters	json
+/credit-notes/compute	POST	computeCreditNote	Compute a credit note	json
+/credit-notes/{id}/smart-tags	GET	getCreditNoteSmartTags	Credit note smart-tags list	json
+/credit-notes/{id}/smart-tags	POST	linkCreditNoteSmartTags	Link smart tags to credit note	json
+/credit-notes/{id}/validate	POST	validateCreditNote	Validate credit note	json
+/credit-notes/{id}/custom-fields	GET	getCreditNoteCustomFields	Credit note custom fields List	json
+/credit-notes/{id}/custom-fields	PUT	updateCreditNoteCustomFields	Update credit note custom fields	json
+/credit-notes/{id}/invoices	GET	getCreditNoteInvoices	Get invoices linked to credit note	json
+/credit-notes/{creditNoteId}/invoices/{invoiceId}	DELETE	unlinkCreditNoteInvoices	Unlink an invoice from a credit note	json
+/credit-notes/{creditNoteId}/invoices/{invoiceId}	POST	linkInvoiceToCreditNote	Link an invoice to a credit note	json
+/credit-notes/{id}/payments	GET	getCreditNotePayments	Credit note payments list	json
+/credit-notes/{documentId}/payments/{paymentId}	DELETE	unlinkCreditNotePayment	Unlink payment from credit note	json
+/credit-notes/{documentId}/payments/{paymentId}	POST	linkCreditNotePayment	Link payment to credit note	json
+/credit-notes/{documentId}/files	GET	getCreditNoteFiles	List directories and files of a credit note	json
+/credit-notes/{documentId}/files	POST	uploadCreditNoteFile	Attach file to an credit note	multipart
+/credit-notes/{creditNoteId}/primes/{primeId}	DELETE	unlinkCreditNotePrime	Unlink a prime from a credit note	json
+/credit-notes/{creditNoteId}/primes/{primeId}	POST	linkCreditNotePrime	Link prime to credit note	json
+/credit-notes/{creditNoteId}/discount-incl-taxes/{discountId}	DELETE	unlinkCreditNoteDiscountInclTaxes	Unlink a discount including taxes from a credit note	json
+/credit-notes/{creditNoteId}/discount-incl-taxes/{discountId}	POST	linkCreditNoteDiscountInclTaxes	Link discount including taxes to credit note	json
+/payments/{id}	DELETE	deletePayment	Delete payment	json
+/payments/{id}	GET	getPayment	Get a payment	json
+/payments	GET	getPayments	Get payments	json
+/payments/search	POST	searchPayments	Search payments	json
+/settings/email	GET	getEmailSettings	Get email settings	json
+/settings/email	PUT	putEmailSettings	Update email settings	json
+/settings/email/tags	GET	getEmailSignatureTags	Get available tags for email signature settings	json
+/fiscal-years	GET	getFiscalYears	Get fiscal years	json
+/settings/accounting-charts	GET	getAccountingChartsSettings	Get accounting charts settings	json
+/settings/accounting-charts	PUT	putAccountingChartsSettings	Update accounting charts settings	json
+/languages	GET	getLanguages	Get the account languages	json
+/directories	POST	createDirectory	Create directory	json
+/directories/{id}	DELETE	deleteDirectory	Delete the directory and all items attached	json
+/directories/{id}	GET	getDirectory	Get directory	json
+/directories/{id}	PUT	updateDirectory	Update directory	json
+/directories/{id}/files	GET	getDirectoryFiles	List directories and files in a directory	json
+/directories/{id}/files	POST	uploadDirectoryFile	Attach file to a directory	multipart
+/subscriptions	GET	getSubscriptions	Fetch list of subscriptions	json
+/subscriptions	POST	createSubscription	Create a subscription	json
+/subscriptions/search	POST	searchSubscriptions	Search subscriptions	json
+/subscriptions/{id}	DELETE	deleteSubscription	Delete a subscription	json
+/subscriptions/{id}	GET	getSubscription	Get subscription	json
+/subscriptions/{id}	PUT	updateSubscription	Update a subscription	json
+/subscriptions/{id}/payment-installments	PATCH	patchSubscriptionPaymentInstallment	Add payment installment for a subscription	json
+/subscriptions/payment-installments/{paymentInstallmentId}	DELETE	deleteSubscriptionPaymentInstallmentById	Delete a payment installment for a subscription	json
+/subscriptions/payment-installments/{paymentInstallmentId}	PUT	updateSubscriptionPaymentInstallment	Update a payment installment for a subscription	json
+/subscriptions/payment-installments	GET	getSubscriptionsPaymentInstallments	Get all payment installments of subscriptions	json
+/subscriptions/payment-installments/search	POST	searchSubscriptionsPaymentInstallments	Search payment installments of subscriptions	json
+/mandates	GET	getMandates	Get GoCardless mandates	json
+/mandates/search	POST	searchMandates	Search GoCardless mandates	json
+/gocardless/directdebit/{id}/timeline	GET	getGocardlessDirectdebitTimeline	Get timeline of a GoCardless directdebit	json
+/documents/models	GET	getModels	List document models	json
+/documents/models	POST	createModel	Create a document model	json
+/documents/models/{id}	DELETE	deleteModel	Delete document model	json
+/documents/models/{id}	GET	getModel	Get document model	json
+/documents/models/{id}	PUT	updateModel	Update document model	json
+/documents/models/search	POST	searchModels	Search document models	json
+/documents/models/{id}/convert	POST	convertModel	Convert a document model into a document	json
+/documents/models/tags	GET	getModelTags	Get available tags for document models	json
+/primes	GET	getPrimes	Get list of primes	json
+/discount-incl-taxes	GET	getDiscountsInclTaxes	Get list of discounts including taxes	json
+/discount-incl-taxes	POST	createDiscountInclTaxes	Create a discount including taxes	json
+/discount-incl-taxes/{id}	DELETE	deleteDiscountInclTaxes	Delete a discount including taxes	json
+/discount-incl-taxes/{id}	GET	getDiscountInclTaxes	Get a discount including taxes	json
+/discount-incl-taxes/{id}	PUT	updateDiscountInclTaxes	Update a discount including taxes	json
+/deposit-invoices	GET	getDepositInvoices	List deposit invoices	json
+/deposit-invoices	POST	createDepositInvoice	Create a deposit invoice	json
+/deposit-invoices/search	POST	searchDepositInvoices	Search deposit invoices	json
+/deposit-invoices/prepare	POST	prepareDepositInvoice	Prepare a deposit invoice	json
+/deposit-invoices/quick-create	POST	quickCreateDepositInvoice	Create a deposit invoice quickly	json
+/deposit-invoices/compute	POST	computeDepositInvoice	Compute a deposit invoice	json
+/deposit-invoices/{id}	GET	getDepositInvoice	Get a deposit invoice	json
+/deposit-invoices/{id}	PUT	updateDepositInvoice	Update a deposit invoice	json
+/deposit-invoices/{id}/smart-tags	GET	getDepositInvoiceSmartTags	Get smart tags for a deposit invoice	json
+/deposit-invoices/{id}/smart-tags	POST	linkDepositInvoiceSmartTags	Link smart tags to deposit invoice	json
+/deposit-invoices/{id}/validate	POST	validateDepositInvoice	Validate Deposit Invoice	json
+/deposit-invoices/{id}/credit-notes	GET	getDepositInvoiceCreditNotes	Get credit notes linked to a deposit invoice	json
+/deposit-invoices/{id}/payments	GET	getDepositInvoicePayments	Deposit payments list	json
+/deposit-invoices/{documentId}/payments/{paymentId}	DELETE	unlinkDepositInvoicePayment	Unlink payment from deposit invoice	json
+/deposit-invoices/{documentId}/payments/{paymentId}	POST	linkDepositInvoicePayment	Link payment to deposit invoice	json
+/deposit-invoices/{documentId}/files	GET	getDepositInvoiceFiles	List directories and files of a deposit invoice	json
+/deposit-invoices/{documentId}/files	POST	uploadDepositInvoiceFile	Attach file to a deposit invoice	multipart
+/deposit-invoices/{id}/custom-fields	GET	getDepositInvoiceCustomFields	Get deposit invoice custom fields	json
+/deposit-invoices/{id}/custom-fields	PUT	updateDepositInvoiceCustomFields	Update Deposit Invoice custom fields	json
+/proforma-invoices/{id}/custom-fields	GET	getProformaInvoiceCustomFields	Proforma Invoice custom fields List	json
+/progress-invoices	POST	createProgressInvoice	Create a Progress invoice	json
+/progress-invoices/compute	POST	computeProgressInvoice	Compute a progress invoice	json
+/progress-invoices/{id}	PUT	updateProgressInvoice	Update a progress invoice	json
+/payment-terms	GET	getPaymentTerms	List payment terms	json
+/bank-accounts	GET	getBankAccounts	List bank accounts	json
+/check-labels	GET	getCheckLabels	List check labels	json
+/assigned-staff-labels	GET	getAssignedStaffLabels	List assigned staff labels	json
+/addresses	GET	getAddresses	List account addresses	json
+/proposals/models	GET	getProposalsModels	List proposal models	json
+/proposals/models/search	POST	searchProposalsModels	Search proposal models	json
+/proposals/models/{id}	GET	getProposalModel	Get proposal model	json
+/proposals/models/{id}/generate-document	POST	generateProposalDocument	Generate a proposal document	json
+/proposals/documents/{id}	GET	getProposalDocument	Get proposal document	json
+/proposals/documents/{id}/esign	DELETE	cancelEsignProposalDocument	Cancel esign for proposal document	json
+/proposals/documents/{id}/esign	GET	getEsignProposalDocument	Get esign for proposal document	json
+/proposals/documents/{id}/esign	POST	createEsignProposalDocument	Create esign for proposal document	json

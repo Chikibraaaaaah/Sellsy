@@ -1,0 +1,18 @@
+{
+  "object": "bank-accounts",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "list": "getBankAccounts"
+  },
+  "updateMethod": null,
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/bank-accounts",
+      "operation": "getBankAccounts",
+      "summary": "List bank accounts",
+      "contentType": "application/json"
+    }
+  ]
+}

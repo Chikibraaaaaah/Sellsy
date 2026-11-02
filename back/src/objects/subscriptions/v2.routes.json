@@ -1,0 +1,93 @@
+{
+  "object": "subscriptions",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createSubscription",
+    "list": "getSubscriptions",
+    "search": "searchSubscriptions",
+    "get": "getSubscription",
+    "update": "updateSubscription",
+    "delete": "deleteSubscription"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/subscriptions",
+      "operation": "getSubscriptions",
+      "summary": "Fetch list of subscriptions",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/subscriptions",
+      "operation": "createSubscription",
+      "summary": "Create a subscription",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/subscriptions/search",
+      "operation": "searchSubscriptions",
+      "summary": "Search subscriptions",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/subscriptions/{id}",
+      "operation": "deleteSubscription",
+      "summary": "Delete a subscription",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/subscriptions/{id}",
+      "operation": "getSubscription",
+      "summary": "Get subscription",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/subscriptions/{id}",
+      "operation": "updateSubscription",
+      "summary": "Update a subscription",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PATCH",
+      "path": "/subscriptions/{id}/payment-installments",
+      "operation": "patchSubscriptionPaymentInstallment",
+      "summary": "Add payment installment for a subscription",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/subscriptions/payment-installments/{paymentInstallmentId}",
+      "operation": "deleteSubscriptionPaymentInstallmentById",
+      "summary": "Delete a payment installment for a subscription",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/subscriptions/payment-installments/{paymentInstallmentId}",
+      "operation": "updateSubscriptionPaymentInstallment",
+      "summary": "Update a payment installment for a subscription",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/subscriptions/payment-installments",
+      "operation": "getSubscriptionsPaymentInstallments",
+      "summary": "Get all payment installments of subscriptions",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/subscriptions/payment-installments/search",
+      "operation": "searchSubscriptionsPaymentInstallments",
+      "summary": "Search payment installments of subscriptions",
+      "contentType": "application/json"
+    }
+  ]
+}

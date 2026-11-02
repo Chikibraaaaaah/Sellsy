@@ -1,0 +1,42 @@
+{
+  "object": "custom-activity-types",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "postCustomActivityTypes",
+    "list": "getCustomActivityTypes",
+    "get": "getCustomActivityTypesId",
+    "update": "putCustomActivityTypesId"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/custom-activity-types/{id}",
+      "operation": "getCustomActivityTypesId",
+      "summary": "Get Custom Activity Type",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/custom-activity-types/{id}",
+      "operation": "putCustomActivityTypesId",
+      "summary": "Update Custom Activity Type",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/custom-activity-types",
+      "operation": "getCustomActivityTypes",
+      "summary": "Custom Activity Types List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/custom-activity-types",
+      "operation": "postCustomActivityTypes",
+      "summary": "Create Custom Activity Type",
+      "contentType": "application/json"
+    }
+  ]
+}

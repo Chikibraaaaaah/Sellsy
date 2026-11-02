@@ -1,0 +1,542 @@
+{
+  "object": "progress-invoices",
+  "operation": "createProgressInvoice",
+  "sourceSchema": "ProgressInvoiceCreateWritable",
+  "fields": [
+    {
+      "field": "parent",
+      "required": true,
+      "type": "object",
+      "description": "Parent document to which the progress invoice will be linked"
+    },
+    {
+      "field": "rows",
+      "type": "array",
+      "items": "object",
+      "required": true,
+      "description": "Rows of the progress invoice. There must be at least one progress row.\n"
+    },
+    {
+      "field": "date",
+      "required": false,
+      "type": "string",
+      "format": "date",
+      "example": "2022-01-02",
+      "description": "Date of the invoice"
+    },
+    {
+      "field": "validate.status",
+      "required": false,
+      "type": "boolean",
+      "description": "If true the invoice will be validated with definitive number and will not be editable."
+    },
+    {
+      "field": "validate.flow",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "einvoicing",
+        "ereporting"
+      ],
+      "description": "E-invoicing flow applied when validating the invoice. Optional — when omitted, the recommended flow will be used. When provided, the value is checked against the recommended flow:\n  - if the invoice is out of the e-invoicing scope, a validation error is returned;\n  - if the detected flow is forced (the opposite flow is not selectable) and differs from the value provided, a validation error is returned;\n  - otherwise, the value provided is applied.\n"
+    },
+    {
+      "field": "subject",
+      "required": false,
+      "type": "string",
+      "description": "Subject of the invoice"
+    },
+    {
+      "field": "currency",
+      "required": false,
+      "type": "string",
+      "example": "EUR",
+      "description": "Currency code of the invoice"
+    },
+    {
+      "field": "related[]",
+      "type": "array",
+      "required": false,
+      "description": "Objects linked to the invoice :\n    - Contact is the contact of company linked to the invoice. There may be no or one contact. If contact is not provided, the default contact will be applied. If contact ID is null, no contact will be linked.\n"
+    },
+    {
+      "field": "related[].id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "example": 234,
+      "description": "ID of the related contact"
+    },
+    {
+      "field": "related[].type",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "contact"
+      ],
+      "example": "contact",
+      "description": "Type of related object"
+    },
+    {
+      "field": "company_name",
+      "required": false,
+      "type": "string",
+      "description": "Company or individual name displayed on the invoice. If not provided, use company_name of the parent document."
+    },
+    {
+      "field": "company_reference",
+      "required": false,
+      "type": "string",
+      "description": "Company or individual reference displayed on the invoice. If not provided, use company_reference of the parent document."
+    },
+    {
+      "field": "order_reference",
+      "required": false,
+      "type": "string",
+      "description": "Order reference displayed on the invoice"
+    },
+    {
+      "field": "public_link_enabled",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Public link of the invoice"
+    },
+    {
+      "field": "owner_id",
+      "required": false,
+      "type": "integer",
+      "minimum": 1,
+      "description": "Invoice's owner (staff id)"
+    },
+    {
+      "field": "assigned_staff_id",
+      "required": false,
+      "type": "integer",
+      "minimum": 1,
+      "description": "Invoice's assigned staff (staff id)"
+    },
+    {
+      "field": "invoicing_address_id",
+      "required": false,
+      "type": "integer",
+      "minimum": 1,
+      "description": "Invoicing address, by default take invoicing address of company/individual."
+    },
+    {
+      "field": "delivery_address_id",
+      "required": false,
+      "type": "integer",
+      "minimum": 1,
+      "description": "Shipping address, by default take shipping address of company/individual."
+    },
+    {
+      "field": "issuer_address_id",
+      "required": false,
+      "type": "integer",
+      "description": "Issuer address, by default take main account address."
+    },
+    {
+      "field": "note",
+      "required": false,
+      "type": "string",
+      "example": "This invoice is very important<br />",
+      "description": "Notes of the invoice"
+    },
+    {
+      "field": "layout_id",
+      "required": false,
+      "type": "integer",
+      "description": "Document layout ID"
+    },
+    {
+      "field": "lang_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "description": "Language in which the dynamic elements of the document will be displayed (Descriptions and product names, payment methods, payment terms, etc.). Send null to use the default language."
+    },
+    {
+      "field": "progress_invoice_mode",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "global",
+        "per-line"
+      ],
+      "nullable": false,
+      "default": "per-line",
+      "description": "Progress invoice mode. If global mode is chosen, progress percent should be the same for each row."
+    },
+    {
+      "field": "bank_account_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "minimum": 1,
+      "description": "Bank account id"
+    },
+    {
+      "field": "payment_method_ids",
+      "type": "array",
+      "items": "integer",
+      "required": false,
+      "description": "payments methods allowed on the invoice"
+    },
+    {
+      "field": "check_label_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "description": "Check label ID"
+    },
+    {
+      "field": "vat_mode",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "debit",
+        "collection"
+      ],
+      "example": "debit",
+      "description": "VAT Mode"
+    },
+    {
+      "field": "vat_mention",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 255,
+      "example": "mention",
+      "description": "Deprecated field: a default mention is now applied, depending on the VAT mode of the invoice."
+    },
+    {
+      "field": "payment_terms",
+      "required": false,
+      "type": "object",
+      "description": "Payment terms of the invoice\n"
+    },
+    {
+      "field": "settings.payments.payment_modules",
+      "type": "array",
+      "items": "string",
+      "enum": [
+        "stripe",
+        "atos",
+        "paypal",
+        "adyen",
+        "stancer"
+      ],
+      "required": false,
+      "description": ""
+    },
+    {
+      "field": "settings.payments.direct_debit_module",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "stripe",
+        "gocardless"
+      ],
+      "nullable": true
+    },
+    {
+      "field": "settings.pdf_display.show_vat_mention",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Deprecated field: vat mention is now always shown on PDF"
+    },
+    {
+      "field": "settings.pdf_display.show_bank_account",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show bank account information"
+    },
+    {
+      "field": "settings.pdf_display.show_check_label",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show check label information"
+    },
+    {
+      "field": "settings.pdf_display.show_contact_name",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show contact name"
+    },
+    {
+      "field": "settings.pdf_display.show_siret",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show siret"
+    },
+    {
+      "field": "settings.pdf_display.show_siren",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show siren"
+    },
+    {
+      "field": "settings.pdf_display.show_vat_number",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show vat number"
+    },
+    {
+      "field": "settings.pdf_display.show_company_reference",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show company reference"
+    },
+    {
+      "field": "settings.pdf_display.show_payment_methods",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show payment methods"
+    },
+    {
+      "field": "settings.pdf_display.show_payment_terms",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show payment terms"
+    },
+    {
+      "field": "settings.pdf_display.show_payment_deadlines",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show payment deadlines"
+    },
+    {
+      "field": "settings.pdf_display.show_company_phone_number",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show company phone number"
+    },
+    {
+      "field": "settings.pdf_display.show_delivery_address",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show delivery address"
+    },
+    {
+      "field": "settings.pdf_display.show_barcode_values",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show barcode values"
+    },
+    {
+      "field": "settings.pdf_display.show_barcode_images",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show barcode image"
+    },
+    {
+      "field": "settings.pdf_display.show_reference_column",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show reference column"
+    },
+    {
+      "field": "settings.pdf_display.show_quantity_column",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show quantity column"
+    },
+    {
+      "field": "settings.pdf_display.show_image_column",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show image column"
+    },
+    {
+      "field": "settings.pdf_display.show_unit_cost_column",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show unit cost column"
+    },
+    {
+      "field": "settings.pdf_display.show_amount_column",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show amount column"
+    },
+    {
+      "field": "settings.pdf_display.show_taxes_column",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show taxes column"
+    },
+    {
+      "field": "settings.pdf_display.show_discount_column",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show discount column"
+    },
+    {
+      "field": "settings.pdf_display.show_vat_law_text",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show legal text dedicated to European VAT"
+    },
+    {
+      "field": "settings.pdf_display.show_late_penalty_warning_text",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show legal text on late payment interests"
+    },
+    {
+      "field": "settings.pdf_display.show_early_payment_discount_mention",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show the early payment discount mention"
+    },
+    {
+      "field": "settings.pdf_display.show_sale_type",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show sale type column on documents"
+    },
+    {
+      "field": "settings.pdf_display.show_progress_invoice_summary",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show progress invoice summary"
+    },
+    {
+      "field": "settings.pdf_display.show_terms_and_conditions_text",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Show terms and conditions text page"
+    },
+    {
+      "field": "settings.shipping.parcel_count",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "minimum": 0,
+      "maximum": 999999,
+      "example": 1,
+      "description": "Number of parcels"
+    },
+    {
+      "field": "settings.shipping.tracking_url",
+      "required": false,
+      "type": "string",
+      "format": "uri",
+      "nullable": true,
+      "maxLength": 250,
+      "example": "https://www.laposte.fr/outils/suivre-vos-envois",
+      "description": "Tracking URL"
+    },
+    {
+      "field": "settings.shipping.tracking_number",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 50,
+      "example": "1Z9999999",
+      "description": "Tracking number"
+    },
+    {
+      "field": "settings.assigned_staff_label_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "minimum": 1,
+      "description": "Assigned staff label displayed on document."
+    },
+    {
+      "field": "shipping_date",
+      "required": false,
+      "type": "string",
+      "format": "date",
+      "nullable": true,
+      "example": "2024-01-31",
+      "description": "Date of the shipping"
+    },
+    {
+      "field": "shipping_volume",
+      "required": false,
+      "type": "string",
+      "description": "Total volume of product to ship"
+    },
+    {
+      "field": "shipping_weight.unit",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "g",
+        "kg",
+        "oz",
+        "lb"
+      ],
+      "example": "g",
+      "description": "Unit of the weight"
+    },
+    {
+      "field": "shipping_weight.value",
+      "required": false,
+      "type": "string",
+      "example": "100.50",
+      "description": "weight"
+    },
+    {
+      "field": "analytic_code",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 13,
+      "example": "divers",
+      "description": "Analytic code of document"
+    },
+    {
+      "field": "sale_type",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "product",
+        "service",
+        "mixed"
+      ],
+      "example": "product",
+      "description": "Sale type of the document: product (goods), service, or mixed. If not provided, it is automatically detected from the document rows."
+    },
+    {
+      "field": "einvoicing_electronic_address",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 255,
+      "example": "987463775",
+      "description": "E-invoicing routing address identifier for this document"
+    }
+  ]
+}

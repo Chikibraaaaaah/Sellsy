@@ -1,0 +1,46 @@
+{
+  "object": "directories",
+  "operation": "createDirectory",
+  "sourceSchema": "CreateDirectory",
+  "fields": [
+    {
+      "field": "name",
+      "required": true,
+      "type": "string",
+      "maxLength": 30,
+      "minLength": 1,
+      "description": "Name of the directory"
+    },
+    {
+      "field": "description",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 160,
+      "description": "An optional description for the directory"
+    },
+    {
+      "field": "parent.type",
+      "required": true,
+      "type": "string",
+      "enum": [
+        "company",
+        "individual",
+        "contact",
+        "opportunity",
+        "estimate",
+        "invoice",
+        "credit-note",
+        "order",
+        "directory"
+      ],
+      "example": "company"
+    },
+    {
+      "field": "parent.id",
+      "required": true,
+      "type": "integer",
+      "description": "Parent object id"
+    }
+  ]
+}

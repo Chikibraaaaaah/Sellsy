@@ -1,0 +1,191 @@
+{
+  "object": "companies",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createCompany",
+    "list": "getCompanies",
+    "search": "searchCompanies",
+    "get": "getCompany",
+    "update": "updateCompany",
+    "delete": "deleteCompany"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/companies",
+      "operation": "getCompanies",
+      "summary": "Companies List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/companies",
+      "operation": "createCompany",
+      "summary": "Create a company",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/companies/search",
+      "operation": "searchCompanies",
+      "summary": "Search companies",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/companies/export",
+      "operation": "exportCompanies",
+      "summary": "Export companies",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/companies/favourite-filters",
+      "operation": "getCompanyFavouriteFilters",
+      "summary": "List companies favourite filters",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/companies/{id}",
+      "operation": "deleteCompany",
+      "summary": "Delete company",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/companies/{id}",
+      "operation": "getCompany",
+      "summary": "Get Company",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/companies/{id}",
+      "operation": "updateCompany",
+      "summary": "Update Company",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/companies/{id}/convert",
+      "operation": "convertCompany",
+      "summary": "Convert prospect company to client company",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/companies/{companyId}/addresses",
+      "operation": "getCompanyAddresses",
+      "summary": "Get company addresses",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/companies/{companyId}/addresses",
+      "operation": "createCompanyAddress",
+      "summary": "Create a company address",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/companies/{companyId}/addresses/{id}",
+      "operation": "deleteCompanyAddress",
+      "summary": "Delete a company address",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/companies/{companyId}/addresses/{id}",
+      "operation": "getCompanyAddress",
+      "summary": "Get a company address",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/companies/{companyId}/addresses/{id}",
+      "operation": "updateCompanyAddress",
+      "summary": "Update a company address",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/companies/{id}/payments",
+      "operation": "createCompanyPayment",
+      "summary": "Record payment on a company",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/companies/{id}/contacts",
+      "operation": "getCompanyContacts",
+      "summary": "Get a company contacts",
+      "contentType": "application/json"
+    },
+    {
+      "method": "DELETE",
+      "path": "/companies/{companyId}/contacts/{contactId}",
+      "operation": "unlinkCompanyContact",
+      "summary": "Unlink a contact of company",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/companies/{companyId}/contacts/{contactId}",
+      "operation": "linkCompanyContact",
+      "summary": "Link a contact at one company",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/companies/{companyId}/contacts/{contactId}",
+      "operation": "updateCompanyContact",
+      "summary": "Update a contact of company link",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/companies/{id}/custom-fields",
+      "operation": "getCompanyCustomFields",
+      "summary": "Company custom fields List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/companies/{id}/custom-fields",
+      "operation": "updateCompanyCustomFields",
+      "summary": "Update Company custom fields",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/companies/{companyId}/smart-tags",
+      "operation": "getCompanySmartTags",
+      "summary": "Company smart tags List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/companies/{companyId}/smart-tags",
+      "operation": "linkCompanySmartTags",
+      "summary": "Link smart tags to company",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/companies/{companyId}/files",
+      "operation": "getCompanyFiles",
+      "summary": "List directories and files of a company",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/companies/{companyId}/files",
+      "operation": "uploadCompanyFile",
+      "summary": "Attach file to a company",
+      "contentType": "multipart/form-data"
+    }
+  ]
+}

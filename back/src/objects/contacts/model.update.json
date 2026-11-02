@@ -1,0 +1,615 @@
+{
+  "object": "contacts",
+  "operation": "updateContact",
+  "sourceSchema": "ContactUpdateItemWritable",
+  "fields": [
+    {
+      "field": "civility",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "mr",
+        "mrs",
+        "ms"
+      ],
+      "nullable": true,
+      "example": "mrs",
+      "description": "Civility of staff"
+    },
+    {
+      "field": "first_name",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 200,
+      "example": "John",
+      "description": "Contact first name"
+    },
+    {
+      "field": "last_name",
+      "required": false,
+      "type": "string",
+      "maxLength": 200,
+      "example": "Doe",
+      "description": "Contact name"
+    },
+    {
+      "field": "email",
+      "required": false,
+      "type": "string",
+      "format": "email",
+      "nullable": true,
+      "example": "john.doe@example-company.com",
+      "description": "Contact email"
+    },
+    {
+      "field": "website",
+      "required": false,
+      "type": "string",
+      "format": "url",
+      "nullable": true,
+      "example": "http://example-john-doe.com",
+      "description": "Contact website"
+    },
+    {
+      "field": "phone_number",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 50,
+      "example": "+33100000000",
+      "description": "Contact phone number"
+    },
+    {
+      "field": "mobile_number",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 50,
+      "example": "+33600000000",
+      "description": "Contact mobile number"
+    },
+    {
+      "field": "fax_number",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 50,
+      "example": "+33100000000",
+      "description": "Contact Fax number"
+    },
+    {
+      "field": "position",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 200,
+      "example": "Financial",
+      "description": "Contact job"
+    },
+    {
+      "field": "birth_date",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "2000-05-29",
+      "description": "Contact birth date"
+    },
+    {
+      "field": "avatar",
+      "required": false,
+      "type": "string",
+      "format": "url",
+      "nullable": true,
+      "maxLength": 200,
+      "example": "http://example-john-doe.com/avatar",
+      "description": "Contact avatar"
+    },
+    {
+      "field": "note",
+      "required": false,
+      "type": "string",
+      "example": "An handed-written note describing this contact",
+      "description": "Note on contact"
+    },
+    {
+      "field": "social.twitter",
+      "required": false,
+      "type": "string",
+      "format": "url",
+      "nullable": true,
+      "example": "https://twitter.com/example",
+      "description": "Twitter account"
+    },
+    {
+      "field": "social.facebook",
+      "required": false,
+      "type": "string",
+      "format": "url",
+      "nullable": true,
+      "example": "https://facebook.com/example",
+      "description": "Facebook account"
+    },
+    {
+      "field": "social.linkedin",
+      "required": false,
+      "type": "string",
+      "format": "url",
+      "nullable": true,
+      "example": "https://linkedin.com/example",
+      "description": "Linkedin account"
+    },
+    {
+      "field": "social.viadeo",
+      "required": false,
+      "type": "string",
+      "format": "url",
+      "nullable": true,
+      "example": "https://viadeo.com/example",
+      "description": "Deprecated, no longer use"
+    },
+    {
+      "field": "social.instagram",
+      "required": false,
+      "type": "string",
+      "format": "url",
+      "nullable": true,
+      "example": "https://www.instagram.com/example",
+      "description": "Instagram account"
+    },
+    {
+      "field": "sync.mailchimp",
+      "required": false,
+      "type": "boolean",
+      "nullable": false,
+      "description": "Activate the mailchimp synchronization"
+    },
+    {
+      "field": "sync.mailjet",
+      "required": false,
+      "type": "boolean",
+      "nullable": false,
+      "description": "Activate the mailjet synchronization"
+    },
+    {
+      "field": "sync.simplemail",
+      "required": false,
+      "type": "boolean",
+      "nullable": false,
+      "description": "Activate the simplemail synchronization"
+    },
+    {
+      "field": "created",
+      "required": false,
+      "type": "string",
+      "nullable": false,
+      "example": "2020-05-29T11:22:03+02:00",
+      "description": "Datetime of creating contact"
+    },
+    {
+      "field": "is_archived",
+      "required": false,
+      "type": "boolean",
+      "nullable": false,
+      "example": false,
+      "description": "Status archived or not"
+    },
+    {
+      "field": "marketing_campaigns_subscriptions",
+      "type": "array",
+      "items": "string",
+      "enum": [
+        "sms",
+        "phone",
+        "email",
+        "postal_mail",
+        "custom"
+      ],
+      "required": false,
+      "description": "list of campaign type subcribed"
+    },
+    {
+      "field": "_embed.invoicing_address.name",
+      "required": false,
+      "type": "string",
+      "minLength": 2,
+      "example": "Main office",
+      "description": "Address name"
+    },
+    {
+      "field": "_embed.invoicing_address.address_line_1",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "30 Commercial Road",
+      "description": "Address line one"
+    },
+    {
+      "field": "_embed.invoicing_address.address_line_2",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "Finance and Accounting",
+      "description": "Address line two"
+    },
+    {
+      "field": "_embed.invoicing_address.address_line_3",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "Lighthouse Promotions",
+      "description": "Address line three"
+    },
+    {
+      "field": "_embed.invoicing_address.address_line_4",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "PO Box 215",
+      "description": "Address line four"
+    },
+    {
+      "field": "_embed.invoicing_address.postal_code",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "minLength": 2,
+      "example": "75012",
+      "description": "Address postal code"
+    },
+    {
+      "field": "_embed.invoicing_address.city",
+      "required": false,
+      "type": "string",
+      "minLength": 2,
+      "example": "Paris",
+      "description": "Address city name"
+    },
+    {
+      "field": "_embed.invoicing_address.country",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "minLength": 2,
+      "example": "France",
+      "description": "Address country"
+    },
+    {
+      "field": "_embed.invoicing_address.country_code",
+      "required": false,
+      "type": "string",
+      "maxLength": 2,
+      "minLength": 2,
+      "example": "FR",
+      "description": "Address country code"
+    },
+    {
+      "field": "_embed.invoicing_address.geocode.lat",
+      "required": false,
+      "type": "number",
+      "nullable": true,
+      "example": 46.140862
+    },
+    {
+      "field": "_embed.invoicing_address.geocode.lng",
+      "required": false,
+      "type": "number",
+      "nullable": true,
+      "example": -1.168249
+    },
+    {
+      "field": "_embed.delivery_address.name",
+      "required": false,
+      "type": "string",
+      "minLength": 2,
+      "example": "Main office",
+      "description": "Address name"
+    },
+    {
+      "field": "_embed.delivery_address.address_line_1",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "30 Commercial Road",
+      "description": "Address line one"
+    },
+    {
+      "field": "_embed.delivery_address.address_line_2",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "Finance and Accounting",
+      "description": "Address line two"
+    },
+    {
+      "field": "_embed.delivery_address.address_line_3",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "Lighthouse Promotions",
+      "description": "Address line three"
+    },
+    {
+      "field": "_embed.delivery_address.address_line_4",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "PO Box 215",
+      "description": "Address line four"
+    },
+    {
+      "field": "_embed.delivery_address.postal_code",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "minLength": 2,
+      "example": "75012",
+      "description": "Address postal code"
+    },
+    {
+      "field": "_embed.delivery_address.city",
+      "required": false,
+      "type": "string",
+      "minLength": 2,
+      "example": "Paris",
+      "description": "Address city name"
+    },
+    {
+      "field": "_embed.delivery_address.country",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "minLength": 2,
+      "example": "France",
+      "description": "Address country"
+    },
+    {
+      "field": "_embed.delivery_address.country_code",
+      "required": false,
+      "type": "string",
+      "maxLength": 2,
+      "minLength": 2,
+      "example": "FR",
+      "description": "Address country code"
+    },
+    {
+      "field": "_embed.delivery_address.geocode.lat",
+      "required": false,
+      "type": "number",
+      "nullable": true,
+      "example": 46.140862
+    },
+    {
+      "field": "_embed.delivery_address.geocode.lng",
+      "required": false,
+      "type": "number",
+      "nullable": true,
+      "example": -1.168249
+    },
+    {
+      "field": "_embed.opportunities",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "example": 2,
+      "description": "Count of opportunities"
+    },
+    {
+      "field": "_embed.estimates",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "example": 2,
+      "description": "Count of estimates"
+    },
+    {
+      "field": "_embed.invoices",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "example": 2,
+      "description": "Count of invoices"
+    },
+    {
+      "field": "_embed.orders",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "example": 2,
+      "description": "Count of orders"
+    },
+    {
+      "field": "_embed.deliveries",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "example": 2,
+      "description": "Count of deliveries"
+    },
+    {
+      "field": "_embed.smart_tags",
+      "required": false,
+      "type": "object"
+    },
+    {
+      "field": "_embed.owner.lastname",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 200,
+      "example": "Smith",
+      "description": "Staff last name"
+    },
+    {
+      "field": "_embed.owner.firstname",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 200,
+      "example": "John",
+      "description": "Staff first name"
+    },
+    {
+      "field": "_embed.owner.email",
+      "required": false,
+      "type": "string",
+      "format": "email",
+      "example": "john@example-company.com",
+      "description": "Staff email address"
+    },
+    {
+      "field": "_embed.owner.position",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "Sales manager",
+      "description": "Staff position"
+    },
+    {
+      "field": "_embed.owner.phone_number",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "+33100000000",
+      "description": "Staff phone number"
+    },
+    {
+      "field": "_embed.owner.mobile_number",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "+33600000000",
+      "description": "Staff mobile number"
+    },
+    {
+      "field": "_embed.owner.fax_number",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "+33500000000",
+      "description": "Staff fax number"
+    },
+    {
+      "field": "_embed.owner.civility",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "mr",
+        "mrs",
+        "ms"
+      ],
+      "nullable": true,
+      "example": "mrs",
+      "description": "Civility of staff"
+    },
+    {
+      "field": "_embed.owner.profile",
+      "required": false,
+      "type": "integer",
+      "example": 3443,
+      "description": "Staff privilège profile"
+    },
+    {
+      "field": "_embed.owner.team.id",
+      "required": false,
+      "type": "integer",
+      "example": -1
+    },
+    {
+      "field": "_embed.owner.team.name",
+      "required": false,
+      "type": "string",
+      "example": "Commercial"
+    },
+    {
+      "field": "_embed.owner.job.id",
+      "required": false,
+      "type": "integer",
+      "example": -1
+    },
+    {
+      "field": "_embed.owner.job.name",
+      "required": false,
+      "type": "string",
+      "example": "Office manager"
+    },
+    {
+      "field": "_embed.owner.timezone",
+      "required": false,
+      "type": "string",
+      "example": "Europe/Paris",
+      "description": "Staff time zone"
+    },
+    {
+      "field": "_embed.owner.language",
+      "required": false,
+      "type": "string",
+      "example": "fr",
+      "description": "Staff language"
+    },
+    {
+      "field": "_embed.custom_fields",
+      "type": "array",
+      "items": "unknown",
+      "required": false,
+      "description": "Custom-fields values requested"
+    },
+    {
+      "field": "_embed.acl.can_be_updated",
+      "required": false,
+      "type": "boolean",
+      "nullable": true,
+      "example": true,
+      "description": "Contact can be updated"
+    },
+    {
+      "field": "_embed.acl.can_be_deleted",
+      "required": false,
+      "type": "boolean",
+      "nullable": true,
+      "example": true,
+      "description": "Contact can be deleted"
+    },
+    {
+      "field": "_embed.acl.view_contacts_addresses",
+      "required": false,
+      "type": "boolean",
+      "nullable": true,
+      "example": true,
+      "description": "Contact Addresses can be listed"
+    },
+    {
+      "field": "_embed.acl.create_contacts_addresses",
+      "required": false,
+      "type": "boolean",
+      "nullable": true,
+      "example": true,
+      "description": "Contact Addresses can be created"
+    },
+    {
+      "field": "_embed.acl.update_contacts_addresses",
+      "required": false,
+      "type": "boolean",
+      "nullable": true,
+      "example": true,
+      "description": "Contact Addresses can be updated"
+    },
+    {
+      "field": "_embed.acl.delete_contacts_addresses",
+      "required": false,
+      "type": "boolean",
+      "nullable": true,
+      "example": true,
+      "description": "Contact Addresses can be deleted"
+    },
+    {
+      "field": "owner_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "minimum": 1,
+      "example": 112,
+      "description": "Owner of the contact (Staff id expected)"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "object": "calendar-events",
+  "operation": "updateCalendarEvent",
+  "sourceSchema": "CalendarEventUpdateItem",
+  "fields": [
+    {
+      "field": "title",
+      "required": false,
+      "type": "string",
+      "example": "Meeting",
+      "description": "Calendar event title"
+    },
+    {
+      "field": "description",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "example": "Monthly meeting with consulting team",
+      "description": "Calendar event description"
+    },
+    {
+      "field": "datetime_start",
+      "required": false,
+      "type": "string",
+      "format": "date-time",
+      "maxLength": 29,
+      "example": "2020-01-01T00:00:00+01:00",
+      "description": "start date and time of calendar event"
+    },
+    {
+      "field": "datetime_end",
+      "required": false,
+      "type": "string",
+      "format": "date-time",
+      "maxLength": 29,
+      "example": "2020-01-01T00:00:00+01:00",
+      "description": "end date and time of calendar event"
+    },
+    {
+      "field": "is_private",
+      "required": false,
+      "type": "boolean",
+      "default": false,
+      "description": "Calendar event is private or public"
+    },
+    {
+      "field": "all_day",
+      "required": false,
+      "type": "boolean",
+      "default": false,
+      "description": "Calendar event is scheduled for the whole day"
+    },
+    {
+      "field": "label_id",
+      "required": false,
+      "type": "integer",
+      "description": "Label id for event"
+    },
+    {
+      "field": "provider_calendar",
+      "required": false,
+      "type": "string",
+      "example": "myemail@gmail.com",
+      "description": "Calendar id for event"
+    },
+    {
+      "field": "participants[]",
+      "type": "array",
+      "required": false,
+      "description": "Participants (Staff, Contact or External Participants)"
+    },
+    {
+      "field": "participants[].id",
+      "required": false,
+      "type": "integer|string",
+      "description": "Id of participant"
+    },
+    {
+      "field": "participants[].type",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "staff",
+        "contact",
+        "external"
+      ],
+      "description": "Type of participant"
+    },
+    {
+      "field": "related[]",
+      "type": "array",
+      "required": false,
+      "description": "Main object related to the calendar event (limit to 1). If empty, the link with the existing related object will be removed."
+    },
+    {
+      "field": "related[].id",
+      "required": false,
+      "type": "integer",
+      "example": 1
+    },
+    {
+      "field": "related[].type",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "opportunity",
+        "company",
+        "individual",
+        "contact",
+        "estimate",
+        "invoice",
+        "creditnote",
+        "order"
+      ],
+      "example": "opportunity"
+    },
+    {
+      "field": "priority",
+      "required": false,
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Priority level of the calendar event"
+    },
+    {
+      "field": "wants_meet_link",
+      "required": false,
+      "type": "boolean",
+      "default": false,
+      "description": "Whether to create a video conference link for the calendar event"
+    }
+  ]
+}

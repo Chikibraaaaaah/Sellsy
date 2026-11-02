@@ -1,0 +1,6 @@
+{
+  "object": "taxes",
+  "operation": "updateTax",
+  "sourceSchema": "inline",
+  "fields": []
+}

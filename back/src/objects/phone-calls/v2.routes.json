@@ -1,0 +1,58 @@
+{
+  "object": "phone-calls",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createPhoneCall",
+    "list": "getPhoneCalls",
+    "search": "searchPhoneCalls",
+    "get": "getPhoneCall",
+    "update": "updatePhoneCall",
+    "delete": "deletePhoneCall"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "DELETE",
+      "path": "/phone-calls/{id}",
+      "operation": "deletePhoneCall",
+      "summary": "Delete a phoneCall",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/phone-calls/{id}",
+      "operation": "getPhoneCall",
+      "summary": "Get a phoneCall",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/phone-calls/{id}",
+      "operation": "updatePhoneCall",
+      "summary": "Update a phoneCall",
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/phone-calls",
+      "operation": "getPhoneCalls",
+      "summary": "PhoneCalls List",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/phone-calls",
+      "operation": "createPhoneCall",
+      "summary": "Create a phonecall",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/phone-calls/search",
+      "operation": "searchPhoneCalls",
+      "summary": "Search phoneCalls",
+      "contentType": "application/json"
+    }
+  ]
+}

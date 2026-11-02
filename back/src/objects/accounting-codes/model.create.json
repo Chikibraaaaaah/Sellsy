@@ -1,0 +1,37 @@
+{
+  "object": "accounting-codes",
+  "operation": "createAccountingCode",
+  "sourceSchema": "AccountingCodeCreate",
+  "fields": [
+    {
+      "field": "code",
+      "required": true,
+      "type": "string",
+      "maxLength": 13,
+      "example": "411000",
+      "description": "accounting code"
+    },
+    {
+      "field": "label",
+      "required": false,
+      "type": "string",
+      "maxLength": 255,
+      "example": "Provision of services",
+      "description": "Label of accounting code"
+    },
+    {
+      "field": "views",
+      "type": "array",
+      "items": "string",
+      "enum": [
+        "third",
+        "purchase",
+        "sell",
+        "bank",
+        "reconciliation"
+      ],
+      "required": false,
+      "description": "List of views where accounting code is usable"
+    }
+  ]
+}

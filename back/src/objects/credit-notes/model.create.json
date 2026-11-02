@@ -1,0 +1,236 @@
+{
+  "object": "credit-notes",
+  "operation": "createCreditNote",
+  "sourceSchema": "CreditNoteCreateWritable",
+  "fields": [
+    {
+      "field": "number",
+      "required": false,
+      "type": "string",
+      "example": "CRE-2022-01-02-002",
+      "description": "Credit note number (shouldn't be provided if draft numbering is enabled)"
+    },
+    {
+      "field": "date",
+      "required": false,
+      "type": "string",
+      "format": "date",
+      "example": "2022-01-02",
+      "description": "Date of the credit note"
+    },
+    {
+      "field": "due_date",
+      "required": false,
+      "type": "string",
+      "format": "date",
+      "example": "2022-02-02",
+      "description": "Due date of the credit note"
+    },
+    {
+      "field": "created",
+      "required": false,
+      "type": "string",
+      "format": "date-time",
+      "example": "2020-01-01T00:00:00+01:00",
+      "description": "Created date of credit note"
+    },
+    {
+      "field": "subject",
+      "required": false,
+      "type": "string",
+      "description": "Subject of the credit note"
+    },
+    {
+      "field": "currency",
+      "required": false,
+      "type": "string",
+      "example": "EUR",
+      "description": "Currency code of the credit note"
+    },
+    {
+      "field": "discount.type",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "percent",
+        "amount"
+      ],
+      "example": "amount"
+    },
+    {
+      "field": "discount.value",
+      "required": false,
+      "type": "string",
+      "example": "25.20",
+      "description": "value of discount"
+    },
+    {
+      "field": "related[]",
+      "type": "array",
+      "required": true,
+      "description": "Objects linked to the credit note :\n  - There can be only one company or one individual at a time (required)\n  - For Company & Individual, only `client`, `prospect` type are allowed\n  - Contact is the contact of company linked to the credit note. There may be no or one contact.\n  - Opportunity is the opportunity linked to the credit note. There may be zero or more opportunities linked to credit note\n"
+    },
+    {
+      "field": "related[].id",
+      "required": false,
+      "type": "integer",
+      "example": 234,
+      "description": "ID of related"
+    },
+    {
+      "field": "related[].type",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "company",
+        "individual",
+        "opportunity",
+        "contact"
+      ],
+      "example": "company",
+      "description": "Type of related"
+    },
+    {
+      "field": "public_link_enabled",
+      "required": false,
+      "type": "boolean",
+      "example": true,
+      "description": "Public link of the credit note"
+    },
+    {
+      "field": "owner_id",
+      "required": false,
+      "type": "integer",
+      "minimum": 1,
+      "description": "Credit note's owner (staff id)"
+    },
+    {
+      "field": "service_dates.start",
+      "required": false,
+      "type": "string",
+      "format": "date",
+      "example": "2023-01-01",
+      "description": "Start date for service"
+    },
+    {
+      "field": "service_dates.end",
+      "required": false,
+      "type": "string",
+      "format": "date",
+      "example": "2023-01-31",
+      "description": "End date for service <br/><br/> End date must be greater than start date"
+    },
+    {
+      "field": "assigned_staff_id",
+      "required": false,
+      "type": "integer",
+      "description": "Staff in charge of the document"
+    },
+    {
+      "field": "note",
+      "required": false,
+      "type": "string",
+      "maxLength": 65535,
+      "example": "This credit note is very important<br />",
+      "description": "Notes of the credit note"
+    },
+    {
+      "field": "company_reference",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 100,
+      "description": "Company or individual reference displayed on the document. If not provided, the reference of the linked company or individual is used."
+    },
+    {
+      "field": "analytic_code",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 13,
+      "example": "divers",
+      "description": "Analytic code of document"
+    },
+    {
+      "field": "sale_type",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "product",
+        "service",
+        "mixed"
+      ],
+      "example": "product",
+      "description": "Sale type of the document: product (goods), service, or mixed. If not provided, it is automatically detected from the document rows."
+    },
+    {
+      "field": "layout_id",
+      "required": false,
+      "type": "integer",
+      "description": "Document layout ID"
+    },
+    {
+      "field": "lang_id",
+      "required": false,
+      "type": "integer",
+      "nullable": true,
+      "description": "Language in which the dynamic elements of the document will be displayed (Descriptions and product names, payment methods, payment terms, etc.). Send null to use the default language."
+    },
+    {
+      "field": "payment_method_ids",
+      "type": "array",
+      "items": "integer",
+      "required": false,
+      "description": "payments methods allowed on the credit note"
+    },
+    {
+      "field": "invoicing_address_id",
+      "required": false,
+      "type": "integer",
+      "example": 777,
+      "description": "Invoicing address, by default take invoicing address of company/individual."
+    },
+    {
+      "field": "delivery_address_id",
+      "required": false,
+      "type": "integer",
+      "example": 777,
+      "description": "Shipping address, by default take shipping address of company/individual."
+    },
+    {
+      "field": "issuer_address_id",
+      "required": false,
+      "type": "integer",
+      "description": "Issuer address, by default take main account address."
+    },
+    {
+      "field": "einvoicing_electronic_address",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "maxLength": 255,
+      "example": "987463775",
+      "description": "E-invoicing routing address identifier for this document"
+    },
+    {
+      "field": "rows",
+      "type": "array",
+      "items": "object",
+      "required": false,
+      "description": ""
+    },
+    {
+      "field": "parent",
+      "required": false,
+      "type": "object",
+      "nullable": true
+    },
+    {
+      "field": "rate_category_id",
+      "required": false,
+      "type": "integer",
+      "example": 777,
+      "description": "Rate Category to apply on document (By default, the rate_category_id will be that of company)"
+    }
+  ]
+}

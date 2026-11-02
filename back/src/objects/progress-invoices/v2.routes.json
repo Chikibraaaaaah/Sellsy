@@ -1,0 +1,33 @@
+{
+  "object": "progress-invoices",
+  "apiVersion": "v2",
+  "baseUrl": "https://api.sellsy.com/v2",
+  "crud": {
+    "create": "createProgressInvoice",
+    "update": "updateProgressInvoice"
+  },
+  "updateMethod": "PUT",
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/progress-invoices",
+      "operation": "createProgressInvoice",
+      "summary": "Create a Progress invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "POST",
+      "path": "/progress-invoices/compute",
+      "operation": "computeProgressInvoice",
+      "summary": "Compute a progress invoice",
+      "contentType": "application/json"
+    },
+    {
+      "method": "PUT",
+      "path": "/progress-invoices/{id}",
+      "operation": "updateProgressInvoice",
+      "summary": "Update a progress invoice",
+      "contentType": "application/json"
+    }
+  ]
+}
